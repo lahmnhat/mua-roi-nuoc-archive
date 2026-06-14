@@ -536,15 +536,19 @@ function h(tag, attrs, ...children) {
 function esc(s) { return String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;'); }
 
 // ═══════════════════════════════════════════════════════════════
-// SCAN RAIL — 5 puppet cards with SuperSplat embed slots
+// SCAN RAIL — 7 puppet cards with SuperSplat embed slots
 // ═══════════════════════════════════════════════════════════════
 const PUPPETS = [
-  { no: 'MRN.3D.001', id: 'rail-0' },
-  { no: 'MRN.3D.002', id: 'rail-1' },
-  { no: 'MRN.3D.003', id: 'rail-2' },
-  { no: 'MRN.3D.004', id: 'rail-3' },
-  { no: 'MRN.3D.005', id: 'rail-4' },
+  { no: 'MRN.3D.001', id: 'rail-0', url: 'https://superspl.at/s?id=86cfe27d' },
+  { no: 'MRN.3D.002', id: 'rail-1', url: 'https://superspl.at/s?id=f5f2515b' },
+  { no: 'MRN.3D.003', id: 'rail-2', url: 'https://superspl.at/s?id=a7caeeb3' },
+  { no: 'MRN.3D.004', id: 'rail-3', url: 'https://superspl.at/s?id=86cfe27d' },
+  { no: 'MRN.3D.005', id: 'rail-4', url: 'https://superspl.at/s?id=180bab69' },
+  { no: 'MRN.3D.006', id: 'rail-5', url: 'https://superspl.at/s?id=909e32bf' },
+  { no: 'MRN.3D.007', id: 'rail-6', url: 'https://superspl.at/s?id=b10cc2da' },
 ];
+const PUPPET_URL = Object.fromEntries(PUPPETS.map(p => [p.id, p.url]));
+const STAGE_DEFAULT = 'https://superspl.at/s?id=bd7f297f';
 
 function makeScanCard(puppet) {
   const { no, id } = puppet;
@@ -602,7 +606,7 @@ function renderRailPlate(id) {
   const form = document.getElementById('form-' + id);
   const note = document.getElementById('note-' + id);
   if (!plate) return;
-  const url = embeds[id] || '';
+  const url = embeds[id] || PUPPET_URL[id] || '';
 
   if (url) {
     plate.innerHTML = `<iframe src="${esc(url)}" allow="fullscreen;xr-spatial-tracking;accelerometer;gyroscope" allowfullscreen style="position:absolute;inset:0;width:100%;height:100%;border:0;display:block;background:#14110D;"></iframe><span class="embed-frame-lbl">SuperSplat embed</span>`;
@@ -630,7 +634,7 @@ function renderRail() {
 function renderStagePlate() {
   const plate = document.getElementById('stage-plate');
   if (!plate) return;
-  const url = embeds['stagescan'] || '';
+  const url = embeds['stagescan'] || STAGE_DEFAULT;
   if (url) {
     plate.innerHTML = `<iframe src="${esc(url)}" allow="fullscreen;xr-spatial-tracking;accelerometer;gyroscope" allowfullscreen style="position:absolute;inset:0;width:100%;height:100%;border:0;display:block;background:#14110D;"></iframe><span class="embed-frame-lbl">SuperSplat embed</span>`;
   } else {
@@ -642,15 +646,16 @@ function renderStagePlate() {
 // SOUNDSCAPE CARDS — 8 cards with SoundCloud embed slots
 // ═══════════════════════════════════════════════════════════════
 const SOUNDSCAPES = [
-  { id:'snd1', no:'MRN.SND.001', duration:'03:10', photo:'https://lins.com.vn/wp-content/uploads/2025/07/mua-roi-nuoc-lins-vietnam-6.jpg', title:'Intro Music', sub:'Overture', desc:'The opening melody drifts out over the pond as the crowd settles and the lamps come up.' },
-  { id:'snd2', no:'MRN.SND.002', duration:'01:24', photo:'https://lins.com.vn/wp-content/uploads/2025/07/mua-roi-nuoc-lins-vietnam-8.jpg', title:'Bà Con Ơi', sub:"Tễu's welcome", desc:'Tễu calls out across the water — "bà con ơi!" — greeting the audience, and the evening properly begins.' },
-  { id:'snd3', no:'MRN.SND.003', duration:'04:02', photo:'https://www.thanglongwaterpuppet.org/wp-content/uploads/2025/07/Da%CC%80n-nha%CC%A3c-1.jpg', title:'Đàn Bầu Invites the Puppets', sub:'Full ensemble', desc:'The đàn bầu leads and the whole ensemble joins in, calling the puppets out onto the water.' },
-  { id:'snd4', no:'MRN.SND.004', duration:'02:48', photo:'https://i.ytimg.com/vi/oCPJFeAcdCU/maxresdefault.jpg', title:'"Chàng Đây Rồi" — Tễu Steps Out', sub:'First entrance', desc:'"Chàng đây rồi!" — the jester announces himself, and the audience answers with laughter.' },
-  { id:'snd5', no:'MRN.SND.005', duration:'02:55', photo:'https://live.staticflickr.com/4094/4853744767_3f58af9738_b.jpg', title:'Brass Builds Tension', sub:'Brass & percussion', desc:'The brass swells and the drums tighten, winding the scene up toward its turning point.' },
-  { id:'snd6', no:'MRN.SND.006', duration:'04:20', photo:'https://phongnhadiscovery.com/sites/default/files/mua-roi-nuoc.jpg', title:"The Soprano's Song", sub:'Solo voice', desc:'A lone soprano carries the melody across the pond, and the crowd falls silent to listen.' },
-  { id:'snd7', no:'MRN.SND.007', duration:'03:30', photo:'https://nhahatmuaroivietnam.vn/sites/default/files/ttct2.jpg', title:'Đất Thăng Long Hội Tụ Nhân Tài', sub:'Sung verse', desc:'The singers raise the old line — "đất Thăng Long hội tụ nhân tài" — the land where talent gathers.' },
-  { id:'snd8', no:'MRN.SND.008', duration:'02:12', photo:'https://luhanhvietnam.com.vn/du-lich-land-tour/vnt_upload/tour/08_2019/1_copy3.jpg', title:'Đối Đáp — Climax & Outro', sub:'Call & response', desc:'Voices trade back and forth in đối đáp, rising to the climax, and the closing music carries the play out.' },
+  { id:'snd1', no:'MRN.SND.001', duration:'03:10', photo:'https://lins.com.vn/wp-content/uploads/2025/07/mua-roi-nuoc-lins-vietnam-6.jpg', title:'Intro Music', sub:'Overture', desc:'The opening melody drifts out over the pond as the crowd settles and the lamps come up.', scUrl:'https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/soundcloud%253Atracks%253A2338699037&color=%23ff5500&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true&visual=true' },
+  { id:'snd2', no:'MRN.SND.002', duration:'01:24', photo:'https://lins.com.vn/wp-content/uploads/2025/07/mua-roi-nuoc-lins-vietnam-8.jpg', title:'Bà Con Ơi', sub:"Tễu's welcome", desc:'Tễu calls out across the water — "bà con ơi!" — greeting the audience, and the evening properly begins.', scUrl:'https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/soundcloud%253Atracks%253A2338701278&color=%23ff5500&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true&visual=true' },
+  { id:'snd3', no:'MRN.SND.003', duration:'04:02', photo:'https://www.thanglongwaterpuppet.org/wp-content/uploads/2025/07/Da%CC%80n-nha%CC%A3c-1.jpg', title:'Đàn Bầu Invites the Puppets', sub:'Full ensemble', desc:'The đàn bầu leads and the whole ensemble joins in, calling the puppets out onto the water.', scUrl:'https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/soundcloud%253Atracks%253A2338701449&color=%23ff5500&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true&visual=true' },
+  { id:'snd4', no:'MRN.SND.004', duration:'02:48', photo:'https://i.ytimg.com/vi/oCPJFeAcdCU/maxresdefault.jpg', title:'"Chàng Đây Rồi" — Tễu Steps Out', sub:'First entrance', desc:'"Chàng đây rồi!" — the jester announces himself, and the audience answers with laughter.', scUrl:'https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/soundcloud%253Atracks%253A2338701872&color=%23ff5500&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true&visual=true' },
+  { id:'snd5', no:'MRN.SND.005', duration:'02:55', photo:'https://live.staticflickr.com/4094/4853744767_3f58af9738_b.jpg', title:'Brass Builds Tension', sub:'Brass & percussion', desc:'The brass swells and the drums tighten, winding the scene up toward its turning point.', scUrl:'https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/soundcloud%253Atracks%253A2338705142&color=%23ff5500&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true&visual=true' },
+  { id:'snd6', no:'MRN.SND.006', duration:'04:20', photo:'https://phongnhadiscovery.com/sites/default/files/mua-roi-nuoc.jpg', title:"The Soprano's Song", sub:'Solo voice', desc:'A lone soprano carries the melody across the pond, and the crowd falls silent to listen.', scUrl:'https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/soundcloud%253Atracks%253A2338705274&color=%23ff5500&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true&visual=true' },
+  { id:'snd7', no:'MRN.SND.007', duration:'03:30', photo:'https://nhahatmuaroivietnam.vn/sites/default/files/ttct2.jpg', title:'Đất Thăng Long Hội Tụ Nhân Tài', sub:'Sung verse', desc:'The singers raise the old line — "đất Thăng Long hội tụ nhân tài" — the land where talent gathers.', scUrl:'https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/soundcloud%253Atracks%253A2338705334&color=%23ff5500&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true&visual=true' },
+  { id:'snd8', no:'MRN.SND.008', duration:'02:12', photo:'https://luhanhvietnam.com.vn/du-lich-land-tour/vnt_upload/tour/08_2019/1_copy3.jpg', title:'Đối Đáp — Climax & Outro', sub:'Call & response', desc:'Voices trade back and forth in đối đáp, rising to the climax, and the closing music carries the play out.', scUrl:'https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/soundcloud%253Atracks%253A2338705499&color=%23ff5500&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true&visual=true' },
 ];
+const SC_URL = Object.fromEntries(SOUNDSCAPES.map(s => [s.id, s.scUrl]));
 
 function makeSoundscapeCard(d) {
   const card = document.createElement('article');
@@ -685,7 +690,7 @@ function commitSCEmbed(id) {
 function renderSCArea(id) {
   const area = document.getElementById('sc-area-' + id);
   if (!area) return;
-  const url = embeds[id] || '';
+  const url = embeds[id] || SC_URL[id] || '';
   if (url) {
     area.innerHTML = `<iframe src="${esc(url)}" allow="autoplay" scrolling="no" frameborder="no" style="display:block;width:100%;height:120px;border:1px solid rgba(33,29,22,.35);"></iframe>`;
   } else {
