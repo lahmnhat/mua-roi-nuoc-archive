@@ -370,14 +370,14 @@
           <h2 style="font-family:'EB Garamond',serif; font-size:clamp(36px,4.5vw,54px); font-weight:500; margin:12px 0 0; letter-spacing:-.01em; color:#F5F0E3;">Nam Định, Behind the Screen</h2>
         </div>
         <div style="display:flex; align-items:center; gap:18px;">
-          <span style="font-family:'IBM Plex Mono',monospace; font-size:10px; letter-spacing:.18em; text-transform:uppercase; color:rgba(245,240,227,.5);">35mm · 30 frames</span>
+          <span style="font-family:'IBM Plex Mono',monospace; font-size:10px; letter-spacing:.18em; text-transform:uppercase; color:rgba(245,240,227,.5);">35mm · 56 frames</span>
           <div style="display:flex; gap:10px;">
             <button class="carousel-btn carousel-btn-light" id="gal-prev">←</button>
             <button class="carousel-btn carousel-btn-light" id="gal-next">→</button>
           </div>
         </div>
       </div>
-      <p style="font-size:14.5px; line-height:1.7; color:rgba(245,240,227,.62); max-width:72ch; margin:22px 0 0; text-wrap:pretty;">A contact strip from the field visit to Nam Định — the carving shed, the pond, the troupe between takes. Drag a photo onto any frame to develop it; swipe the strip to run down the roll.</p>
+      <p style="font-size:14.5px; line-height:1.7; color:rgba(245,240,227,.62); max-width:72ch; margin:22px 0 0; text-wrap:pretty;">A contact strip from the field visit to Nam Định — the carving shed, the pond, the troupe between takes. 56 frames. Swipe the strip to run down the roll.</p>
     </div>
 
     <div id="gal-scroll" style="display:flex; gap:0; overflow-x:auto; scroll-snap-type:x mandatory; padding:0 0 clamp(44px,6vw,72px); scrollbar-width:thin; background:linear-gradient(#14110D,#0E0C09); box-shadow:inset 0 0 120px rgba(0,0,0,.6);"></div>
@@ -714,15 +714,47 @@ function renderSoundscapes() {
 }
 
 // ═══════════════════════════════════════════════════════════════
-// FILMSTRIP — 30 drag-to-fill frames
+// FILMSTRIP — 56 frames from Nam Định field visit
 // ═══════════════════════════════════════════════════════════════
+const FILM_IDS = [
+  '1W0MNFs_pGXVUCvohobPGVPMlSPQ7UlG0','1NzXs8PVTkQj5VwHG2RkAKpmNQmbBD2E5',
+  '1L6vbsW7jbVX84T-cY6uPN160yPlEcJ-N','1bbrDiGg_1upmm2KBtvkKs9PVvZ-Ba34x',
+  '1dZuoDolAiZrOrU33CMH7omob23kRfCx5','1xcE3CnfrrnZcuO3hrS0TDgocXLfFt0QZ',
+  '1gWwtorTxZUPKMRdAwOkVcMVTSSMrixcL','1tBNehArH60iXOL23UacjLXP11WV6nVLo',
+  '1xstenDfeA_mcQX1QfSaHhPabllP7llCe','1WAnKZ5QK_vGDzKKG-hoWY1-oa23pzoyQ',
+  '1YGCGL6CgWHs_gP3Yr3ot8l1oce1fKO35','19CtKIITfn-UmyT9WtJ9MYMHjbqpucoVG',
+  '1YCDPgCb5b_RMDtrF_Gtn3ECjYnfJOxzJ','1fwHvStUtS9mWWsNt8DJaikNNgcR130h6',
+  '1HG0wFxOPpkikxQwvYcq_XudPXXWN9X_n','1eSVAuPc2pjXjXkTMSO6yRA3OqmTAMo6q',
+  '1gUjFBA1inQRkq3Zab03zVMRImlZTpPs1','1knW3ncivaWufAqP77lUrbPcoYQd1APMS',
+  '1ZxgqGUKrRcu-ISbp1apmFvYk8PLknwvU','1noFXbYJ54eJZXsYfMG4vZ3qLwFuuL-5J',
+  '1XyDB5IX_kwlCJJXj6CWjkrldHTevUfVc','1bDnZL2WFn_c82sXc05fWLFiB9JAJnuRj',
+  '1LTIMRNLsfHiPLNLOwmcnmCgZshSFVU9J','1rVKpXAAisWwXGy5eN2ZE-P9HjMNWBbFk',
+  '12Zoh6kPnBJNAavSxsr1ylx8PRQK1WsXd','1trAFiGLBSrLbILCkOqogk7rSJGhMLqbY',
+  '1b9dFcPr0ctdFzL2PEAk09VqBcY9dZA1a','1pjKjHGJB2OGlR9U5C9xI4Kssni3bJmjr',
+  '1Hw-6UKNr1PjrO_Vn9ALfFq766NBrn3Gh','1F2I3XFXylOoCpcm4GfHE7kfKgTR8WhdO',
+  '13jUZl9NtoC3TpXERdhRGhxXu5CknBdmF','1s1bHWJuZmiZIdRPynW6NSKmmvT5jddq3',
+  '1_NZ8Ur2P-cQyBlcfXpPcgjFoMhwPeyDv','1UCdjMsgNwuMS3YXwPFSdJB4rFjahqe_D',
+  '1X-8XAExj38QwNjP092DJ-mb1umpLQpOj','1k9xYK2YgfbCym8L2ac6bUjGoWkqNkwR0',
+  '1ysTD7j1yXOvAIA_HHKfAv3fIzRPrGeo-','1_mrh-nd2W7DA_CVAkyl7zFl9iwS-oz4M',
+  '1f3pl85M1sLXwACYo62ae7UVcNTpo1PJ3','1_BwrMsepKiAmyDt2FoUtOOMAF_Hdhy7w',
+  '1YMbl8o8HQT1E9t70yvvm9DKgwBpjhpyB','1h85EMSPAHeCloXfqEqZLBXcz8QuEd7dw',
+  '1z0Xb3Pw42LQYWz7eO4Ja7bZ7y3mUUYVI','1DGzY__JhSK9pCfhP7KSgmz399_lG-WMl',
+  '1k-cVPq5Sjly9f1FYsgXQNyxiil45p4gc','1u0gtcX5iEWFH1tCMop5DrxFGuDqSl6rQ',
+  '1-t0XVTjs65NsSt01KTm2PNz9lhH9Oj4l','1JEZ8TXSSN0jUqqUDGJDzM5JwPh93UEzv',
+  '1d5VnAMhsjQFWksY0GjcXgxjOYpJ3kx0K','1yEXnxgJymJ-u3H3fhRdEVzt_1rKAFuz2',
+  '1bt5z-sOELFU9m-sqtt2a2kkfdBAPj8Sb','1IhuxCse6Q8OyV-WiRsVDwl324jPHHG5F',
+  '1-NoQu1uXjso8T2wwnQwZGnZG9Vu3EYUx','1VhUr3zwL0NonHHM0A8Fdl5tVAovUpiSa',
+  '1RHL5Tn9ugMIXlyNeKmArYPdNOV1Zxvp0','1ZgUxk0IJebvIUl7obe5LhZcdD71d97Ki',
+];
+
 function renderFilmstrip() {
   const scroll = document.getElementById('gal-scroll');
   if (!scroll) return;
   scroll.innerHTML = '';
-  for (let i = 1; i <= 30; i++) {
-    const num = String(i).padStart(2, '0');
-    const mark = String(i) + ((i - 1) % 4 === 2 ? 'A' : '');
+  FILM_IDS.forEach((id, idx) => {
+    const num = String(idx + 1).padStart(2, '0');
+    const mark = String(idx + 1) + (idx % 4 === 2 ? 'A' : '');
+    const src = `https://drive.google.com/thumbnail?id=${id}&sz=w800`;
     const frame = document.createElement('div');
     frame.style.cssText = 'flex:0 0 auto;width:clamp(258px,70vw,358px);scroll-snap-align:center;background:#1A150E;border-right:1px solid #000;';
     frame.innerHTML = `
@@ -732,7 +764,7 @@ function renderFilmstrip() {
         <span style="font-family:'IBM Plex Mono',monospace;font-size:8.5px;letter-spacing:.18em;color:#D97A4A;">›${mark}</span>
       </div>
       <div style="position:relative;padding:8px;background:#0E0B07;">
-        <image-slot id="nd-${num}" shape="rect" fit="cover" placeholder="› ${num}" style="display:block;width:100%;aspect-ratio:3/2;background:#000;"></image-slot>
+        <img src="${src}" alt="Nam Định field visit — frame ${num}" loading="lazy" style="display:block;width:100%;aspect-ratio:3/2;object-fit:cover;background:#000;">
         <span style="position:absolute;right:15px;bottom:15px;font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.08em;color:rgba(217,122,74,.95);text-shadow:0 1px 4px rgba(0,0,0,.9);pointer-events:none;">${num}</span>
       </div>
       <div style="display:flex;justify-content:space-between;align-items:center;padding:4px 12px;background:#14100A;">
@@ -741,7 +773,7 @@ function renderFilmstrip() {
       </div>
       <div class="sprocket"></div>`;
     scroll.appendChild(frame);
-  }
+  });
 }
 
 // ═══════════════════════════════════════════════════════════════
