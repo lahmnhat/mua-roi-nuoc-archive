@@ -1,0 +1,1265 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="anonymous">
+<link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&amp;family=Be+Vietnam+Pro:ital,wght@0,400;0,500;0,600;1,400&amp;family=IBM+Plex+Mono:wght@400;500&amp;display=swap" rel="stylesheet">
+<style>
+html { position: relative; scroll-behavior: smooth; }
+body { margin: 0; background: #F5F0E3; color: #211D16; font-family: 'Be Vietnam Pro', sans-serif; overflow-x: clip; -webkit-font-smoothing: antialiased; }
+::selection { background: rgba(169,59,34,0.22); }
+@keyframes mrn-pulse { 0%, 100% { opacity: 0.45; } 50% { opacity: 0.9; } }
+@keyframes mrn-blink { 0%, 100% { opacity: 1; } 50% { opacity: 0.25; } }
+</style>
+<script src="./image-slot.js"></script>
+</helmet>
+
+<template id="__bundler_thumbnail" data-bg-color="#F5F0E3">
+  <svg viewBox="0 0 1200 800" xmlns="http://www.w3.org/2000/svg">
+    <rect width="1200" height="800" fill="#F5F0E3"></rect>
+    <rect x="0" y="0" width="1200" height="14" fill="#A93B22"></rect>
+    <rect x="470" y="250" width="260" height="260" rx="14" fill="none" stroke="#A93B22" stroke-width="14"></rect>
+    <rect x="510" y="290" width="180" height="180" rx="6" fill="none" stroke="#A93B22" stroke-width="6"></rect>
+    <text x="600" y="370" text-anchor="middle" font-family="EB Garamond, Georgia, serif" font-size="62" font-weight="700" fill="#A93B22">RỐI</text>
+    <text x="600" y="450" text-anchor="middle" font-family="EB Garamond, Georgia, serif" font-size="62" font-weight="700" fill="#A93B22">NƯỚC</text>
+  </svg>
+</template>
+<div style="min-height:100vh; background:#F5F0E3;">
+
+  <!-- ======================= MASTHEAD ======================= -->
+  <div style="height:4px; background:#A93B22;"></div>
+  <div style="border-bottom:1px solid rgba(33,29,22,0.3);">
+    <div style="max-width:1280px; margin:0 auto; padding:10px clamp(20px,5vw,56px); display:flex; justify-content:space-between; gap:16px; flex-wrap:wrap;">
+      <span style="font-family:'IBM Plex Mono',monospace; font-size:10px; letter-spacing:0.18em; text-transform:uppercase; color:rgba(33,29,22,0.55);">CAS3020 · Digital Preservation Archive</span>
+      <span style="font-family:'IBM Plex Mono',monospace; font-size:10px; letter-spacing:0.18em; text-transform:uppercase; color:rgba(33,29,22,0.55);">Hà Nội · Red River Delta · Compiled 2026</span>
+    </div>
+  </div>
+
+  <header data-screen-label="Masthead" style="border-bottom:1px solid rgba(33,29,22,0.3);">
+    <div style="max-width:1280px; margin:0 auto; padding:20px clamp(20px,5vw,56px); display:flex; align-items:baseline; justify-content:space-between; gap:24px; flex-wrap:wrap;">
+      <a href="#top" style="font-family:'EB Garamond',serif; font-size:21px; font-weight:600; color:#211D16; text-decoration:none; letter-spacing:0.01em;">Múa Rối Nước — A Living Archive</a>
+      <nav style="display:flex; gap:22px; flex-wrap:wrap;">
+        <a href="#origins" style="font-family:'IBM Plex Mono',monospace; font-size:11px; letter-spacing:0.16em; text-transform:uppercase; color:rgba(33,29,22,0.7); text-decoration:none;" style-hover="color:#A93B22;">Origins</a>
+        <a href="#scans" style="font-family:'IBM Plex Mono',monospace; font-size:11px; letter-spacing:0.16em; text-transform:uppercase; color:rgba(33,29,22,0.7); text-decoration:none;" style-hover="color:#A93B22;">Scans</a>
+        <a href="#soundscapes" style="font-family:'IBM Plex Mono',monospace; font-size:11px; letter-spacing:0.16em; text-transform:uppercase; color:rgba(33,29,22,0.7); text-decoration:none;" style-hover="color:#A93B22;">Sound</a>
+        <a href="#ledger" style="font-family:'IBM Plex Mono',monospace; font-size:11px; letter-spacing:0.16em; text-transform:uppercase; color:rgba(33,29,22,0.7); text-decoration:none;" style-hover="color:#A93B22;">Film</a>
+        <a href="#artisans" style="font-family:'IBM Plex Mono',monospace; font-size:11px; letter-spacing:0.16em; text-transform:uppercase; color:rgba(33,29,22,0.7); text-decoration:none;" style-hover="color:#A93B22;">Artisans</a>
+        <a href="#fieldnotes" style="font-family:'IBM Plex Mono',monospace; font-size:11px; letter-spacing:0.16em; text-transform:uppercase; color:rgba(33,29,22,0.7); text-decoration:none;" style-hover="color:#A93B22;">Field</a>
+        <a href="#chronology" style="font-family:'IBM Plex Mono',monospace; font-size:11px; letter-spacing:0.16em; text-transform:uppercase; color:rgba(33,29,22,0.7); text-decoration:none;" style-hover="color:#A93B22;">Chronology</a>
+      </nav>
+      <span style="font-family:'IBM Plex Mono',monospace; font-size:10px; letter-spacing:0.18em; text-transform:uppercase; color:rgba(33,29,22,0.55);">Vol. I</span>
+    </div>
+  </header>
+
+  <!-- ======================= HERO ======================= -->
+  <section id="top" data-screen-label="Hero" style="position:relative; border-bottom:1px solid rgba(33,29,22,0.3); overflow:hidden;">
+    <img src="https://res.klook.com/images/fl_lossy.progressive,q_65/c_fill,w_1200,h_630/w_80,x_15,y_15,g_south_west,l_Klook_water_br_trans_yhcmh3/activities/jycrgl4auw58tmjfdusp/V%C3%A9M%C3%BAaR%E1%BB%91iN%C6%B0%E1%BB%9BcTh%C4%83ngLongT%E1%BA%A1iH%C3%A0N%E1%BB%99i-KlookVi%E1%BB%87tNam.jpg" alt="" style="position:absolute; inset:0; width:100%; height:100%; object-fit:cover; z-index:0;">
+    <div style="position:absolute; inset:0; z-index:1; background:linear-gradient(rgba(245,240,227,0.80), rgba(245,240,227,0.9));"></div>
+    <div style="position:relative; z-index:2; max-width:1280px; margin:0 auto; padding:clamp(56px,9vw,110px) clamp(20px,5vw,56px) clamp(40px,6vw,72px);">
+      <div style="font-family:'IBM Plex Mono',monospace; font-size:11px; letter-spacing:0.22em; text-transform:uppercase; color:#A93B22;">Exhibition catalogue — Collection No. 01 — Vietnamese water puppetry</div>
+      <h1 style="font-family:'EB Garamond',serif; font-weight:500; font-size:clamp(64px,10.5vw,148px); line-height:0.95; margin:26px 0 0; letter-spacing:-0.015em; text-wrap:balance;">Múa Rối Nước</h1>
+      <div style="font-family:'EB Garamond',serif; font-style:italic; font-size:clamp(22px,2.6vw,32px); color:rgba(33,29,22,0.78); margin-top:18px;">The water puppets of the Red River Delta</div>
+      <div style="margin-top:36px; border-top:3px solid #211D16;"></div>
+      <div style="margin-top:3px; border-top:1px solid #211D16;"></div>
+      <div style="display:flex; gap:clamp(24px,4vw,56px); align-items:flex-start; margin-top:28px; flex-wrap:wrap;">
+        <p style="font-size:17px; line-height:1.75; max-width:64ch; margin:0; color:rgba(33,29,22,0.85); text-wrap:pretty; flex:1 1 420px;">For a thousand years, farmers of the Red River Delta have made carved wooden figures dance on flooded rice fields. This archive gathers their puppets, voices, and waterscapes — scanned, recorded, and transcribed — so that an art born of mud and monsoon is lost to neither.</p>
+      </div>
+      <div style="margin-top:44px; border-top:3px solid #A93B22; padding-top:18px; display:flex; align-items:baseline; gap:clamp(16px,3vw,32px); flex-wrap:wrap;">
+        <div style="font-family:'IBM Plex Mono',monospace; font-size:11px; letter-spacing:0.22em; text-transform:uppercase; color:#A93B22; flex:0 0 auto;">Status</div>
+        <div style="font-family:'EB Garamond',serif; font-size:clamp(26px,3.4vw,40px); line-height:1.15; color:#211D16; letter-spacing:-0.01em;"><span style="color:#A93B22;">Endangered</span> — actively preserved</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ======================= HOW TO READ ======================= -->
+  <section data-screen-label="How to read" style="border-bottom:1px solid rgba(33,29,22,0.3); background:#EFE8D6;">
+    <div style="max-width:1280px; margin:0 auto; padding:28px clamp(20px,5vw,56px); display:flex; gap:16px; align-items:flex-start;">
+      <span style="font-family:'IBM Plex Mono',monospace; font-size:13px; color:#A93B22; padding-top:2px;">How to read</span>
+      <p style="margin:0; font-size:14px; line-height:1.65; color:rgba(33,29,22,0.8); text-wrap:pretty; max-width:62ch;">Explore the puppet scans in 3D, sit through an evening in the audience, watch the 360° film, and step behind the screen in Nam Định.</p>
+    </div>
+  </section>
+
+  <!-- ======================= SECTION II — ORIGINS ======================= -->
+  <section id="origins" data-screen-label="Origins" style="position:relative; border-bottom:1px solid rgba(33,29,22,0.3); overflow:hidden;">
+    <img src="https://cdn.petrotimes.vn/stores/news_dataimages/thuyan/042019/13/12/di-tim-nguon-goc-cua-van-hoa-truyen-thong-mua-roi-nuoc_3.jpg" alt="" style="position:absolute; inset:0; width:100%; height:100%; object-fit:cover; z-index:0;">
+    <div style="position:absolute; inset:0; z-index:1; background:linear-gradient(rgba(245,240,227,0.86), rgba(245,240,227,0.92));"></div>
+    <div style="position:relative; z-index:2; max-width:1280px; margin:0 auto; padding:clamp(64px,8vw,104px) clamp(20px,5vw,56px);">
+      <div data-reveal="" style="display:flex; align-items:flex-end; justify-content:space-between; gap:24px; flex-wrap:wrap; border-bottom:1px solid rgba(33,29,22,0.55); padding-bottom:16px;">
+        <div>
+          <div style="font-family:'IBM Plex Mono',monospace; font-size:11px; letter-spacing:0.22em; text-transform:uppercase; color:#A93B22;">Section II — Origins</div>
+          <h2 style="font-family:'EB Garamond',serif; font-size:clamp(36px,4.5vw,54px); font-weight:500; margin:12px 0 0; letter-spacing:-0.01em;">Born of Flooded Fields</h2>
+        </div>
+        <div style="font-family:'IBM Plex Mono',monospace; font-size:10px; letter-spacing:0.18em; text-transform:uppercase; color:rgba(33,29,22,0.5);">Est. 11th century · Red River Delta</div>
+      </div>
+
+      <div style="display:grid; grid-template-columns:repeat(auto-fit,minmax(min(380px,100%),1fr)); gap:clamp(28px,4vw,64px); margin-top:44px;">
+        <p style="font-family:'EB Garamond',serif; font-size:clamp(24px,2.6vw,30px); line-height:1.45; margin:0; text-wrap:pretty;">Múa rối nước — “puppets that dance on water” — is the only puppet theatre in the world whose stage is the surface of a pond.</p>
+        <div style="display:flex; flex-direction:column; gap:20px;">
+          <p style="font-size:15.5px; line-height:1.8; margin:0; color:rgba(33,29,22,0.85); text-wrap:pretty;">It rose from the flooded paddies of the Red River Delta around the eleventh century, in villages where the monsoon decided everything. When the fields drowned, the farmers performed on them: the disaster itself became the stage.</p>
+          <p style="font-size:15.5px; line-height:1.8; margin:0; color:rgba(33,29,22,0.85); text-wrap:pretty;">A water pavilion — the thủy đình — stands over the communal pond. Behind a split-bamboo screen, puppeteers wade chest-deep, driving lacquered figures with rods and strings hidden beneath the surface. The water conceals the machinery, carries the music, and lets wooden dragons breathe smoke and spit rain.</p>
+          <p style="font-size:15.5px; line-height:1.8; margin:0; color:rgba(33,29,22,0.85); text-wrap:pretty;">The art belonged to guilds — phường rối — and to no one else. Mechanisms were hereditary secrets, sworn at the communal house. That secrecy preserved the craft for nine centuries, and now endangers it: when a guild dies, its knots die with it. This archive exists so that they will not.</p>
+        </div>
+      </div>
+
+      <figure style="margin:clamp(40px,6vw,72px) 0 0; padding:clamp(28px,4vw,48px) clamp(20px,4vw,56px); border-top:3px solid #211D16; border-bottom:1px solid rgba(33,29,22,0.4); background:#EFE8D6;">
+        <blockquote style="margin:0; font-family:'EB Garamond',serif; font-style:italic; font-size:clamp(24px,3.2vw,38px); line-height:1.4; text-align:center; text-wrap:balance;">“…a golden tortoise swam upon the water bearing the three mountains, and on the waves the puppets played…”</blockquote>
+        <figcaption style="margin-top:18px; text-align:center; font-family:'IBM Plex Mono',monospace; font-size:10px; letter-spacing:0.18em; text-transform:uppercase; color:#A93B22;">After the Sùng Thiện Diên Linh stele, Đọi Sơn Pagoda, 1121 CE — the earliest written record of the art</figcaption>
+      </figure>
+
+      <figure style="margin:clamp(40px,6vw,64px) 0 0;">
+        <div style="position:relative; height:clamp(440px,62vw,640px); border:1px solid rgba(33,29,22,0.4); background:#EDE6D2; box-shadow:inset 0 0 0 5px #F5F0E3, inset 0 0 0 6px rgba(33,29,22,0.25); overflow:hidden;">
+          <iframe src="https://uploads.knightlab.com/storymapjs/5a74f1a20ad8a244b2c4febadedd61c2/puppet-water-map/index.html" allowfullscreen="true" frameborder="0" style="position:absolute; inset:0; width:100%; height:100%; border:0; display:block;"></iframe>
+        </div>
+        <figcaption style="margin-top:14px; font-family:'IBM Plex Mono',monospace; font-size:11px; letter-spacing:0.16em; text-transform:uppercase; color:rgba(33,29,22,0.55);">Figure 02 — survey map · Red River Delta, villages with active phường rối</figcaption>
+      </figure>
+    </div>
+  </section>
+
+  <!-- ======================= SECTION III — OBJECT SCANS RAIL ======================= -->
+  <section id="scans" data-screen-label="Object scans" style="border-bottom:1px solid rgba(33,29,22,0.3); background-color:#EFE8D6; background-image:linear-gradient(rgba(239,232,214,0.9), rgba(239,232,214,0.9)), url('https://images.vietnamtourism.gov.vn/vn/images/Muaroinuoc-3.jpg'); background-size:cover; background-position:center; background-attachment:fixed;">
+    <div style="max-width:1280px; margin:0 auto; padding:clamp(64px,8vw,104px) clamp(20px,5vw,56px);">
+      <div data-reveal="" style="display:flex; align-items:flex-end; justify-content:space-between; gap:24px; flex-wrap:wrap; border-bottom:1px solid rgba(33,29,22,0.55); padding-bottom:16px;">
+        <div>
+          <div style="font-family:'IBM Plex Mono',monospace; font-size:11px; letter-spacing:0.22em; text-transform:uppercase; color:#A93B22;">Section III — Object scans</div>
+          <h2 style="font-family:'EB Garamond',serif; font-size:clamp(36px,4.5vw,54px); font-weight:500; margin:12px 0 0; letter-spacing:-0.01em;">Explore in 3D</h2>
+        </div>
+        <div style="display:flex; gap:10px;">
+          <button onClick="{{ onRailPrev }}" style="width:44px; height:44px; border:1px solid #211D16; background:transparent; color:#211D16; font-family:'IBM Plex Mono',monospace; font-size:15px; cursor:pointer;" style-hover="background:#211D16; color:#F5F0E3;">←</button>
+          <button onClick="{{ onRailNext }}" style="width:44px; height:44px; border:1px solid #211D16; background:transparent; color:#211D16; font-family:'IBM Plex Mono',monospace; font-size:15px; cursor:pointer;" style-hover="background:#211D16; color:#F5F0E3;">→</button>
+        </div>
+      </div>
+      <p style="font-size:14.5px; line-height:1.7; color:rgba(33,29,22,0.7); max-width:72ch; margin:22px 0 0; text-wrap:pretty;">Each record opens its own independent viewer. No scan occupies memory until you open it, and each can be released again — many objects can sit side by side without weighing the catalogue down.</p>
+
+      <div ref="{{ railRef }}" style="display:flex; gap:24px; overflow-x:auto; scroll-snap-type:x mandatory; padding:28px 2px 22px; scrollbar-width:thin;">
+        <sc-for list="{{ rail }}" as="item" hint-placeholder-count="4">
+          <article onMouseEnter="{{ item.onHover }}" onMouseLeave="{{ item.onUnhover }}" style="flex:0 0 auto; width:min(430px,84vw); scroll-snap-align:start; border:1px solid rgba(33,29,22,0.35); background:#F9F5EA; display:flex; flex-direction:column; position:relative; transition:transform 0.35s ease, box-shadow 0.35s ease;" style-hover="transform:scale(1.06); z-index:60; box-shadow:0 32px 72px rgba(20,17,13,0.45);">
+            <div style="display:flex; justify-content:space-between; gap:12px; padding:13px 18px; border-bottom:1px solid rgba(33,29,22,0.2); align-items:baseline;">
+              <span style="font-family:'IBM Plex Mono',monospace; font-size:11px; letter-spacing:0.12em; color:#A93B22;">{{ item.no }}</span>
+              <span style="font-family:'IBM Plex Mono',monospace; font-size:10px; letter-spacing:0.16em; text-transform:uppercase; color:#7A6F4E;">3D object record</span>
+            </div>
+            <div style="{{ item.plateStyle }}">
+              <sc-if value="{{ item.hasEmbed }}" hint-placeholder-val="{{ false }}">
+                <iframe src="{{ item.embedUrl }}" allow="fullscreen; xr-spatial-tracking; accelerometer; gyroscope" allowfullscreen="true" style="position:absolute; inset:0; width:100%; height:100%; border:0; display:block; background:#14110D;"></iframe>
+                <span style="position:absolute; top:12px; left:14px; pointer-events:none; font-family:'IBM Plex Mono',monospace; font-size:9px; letter-spacing:0.16em; text-transform:uppercase; color:rgba(245,240,227,0.55);">SuperSplat embed</span>
+              </sc-if>
+              <sc-if value="{{ item.noEmbed }}" hint-placeholder-val="{{ true }}">
+                <div style="position:absolute; inset:0; display:flex; flex-direction:column; align-items:center; justify-content:center; gap:10px; padding:22px; text-align:center; background:repeating-linear-gradient(45deg, rgba(245,240,227,0.04) 0px, rgba(245,240,227,0.04) 7px, rgba(0,0,0,0) 7px, rgba(0,0,0,0) 14px), #14110D;">
+                  <div style="font-family:'IBM Plex Mono',monospace; font-size:9px; letter-spacing:0.18em; text-transform:uppercase; color:rgba(245,240,227,0.5);">3D embed slot — empty</div>
+                  <div style="font-family:'EB Garamond',serif; font-size:17px; line-height:1.3; color:#F5F0E3; max-width:26ch;">Paste a SuperSplat link below to embed this scan</div>
+                </div>
+              </sc-if>
+            </div>
+            <div style="padding:20px 18px 22px; display:flex; flex-direction:column; gap:10px; flex:1;">
+              <sc-if value="{{ item.hasContent }}" hint-placeholder-val="{{ false }}">
+                <h3 style="font-family:'EB Garamond',serif; font-size:25px; font-weight:500; margin:0; line-height:1.2;">{{ item.title }}</h3>
+                <p style="margin:0; font-size:14px; line-height:1.65; color:rgba(33,29,22,0.8); text-wrap:pretty;">{{ item.meaning }}</p>
+              </sc-if>
+              <sc-if value="{{ item.noContent }}" hint-placeholder-val="{{ true }}">
+                <div style="font-family:'IBM Plex Mono',monospace; font-size:10px; letter-spacing:0.14em; text-transform:uppercase; color:rgba(33,29,22,0.4);">Name &amp; description — to be added</div>
+              </sc-if>
+              <div style="margin-top:auto; display:flex; flex-direction:column; gap:10px; padding-top:8px;">
+                <sc-if value="{{ item.noEmbed }}" hint-placeholder-val="{{ true }}">
+                  <div style="display:flex; gap:8px; align-items:center;">
+                    <input value="{{ item.embedDraft }}" onChange="{{ item.onDraft }}" onKeyDown="{{ item.onKey }}" placeholder="Paste SuperSplat link…" style="flex:1; min-width:0; padding:8px 11px; border:1px solid rgba(33,29,22,0.45); background:#FBF8EF; color:#211D16; font-family:'IBM Plex Mono',monospace; font-size:10px;">
+                    <button onClick="{{ item.onEmbed }}" style="flex:0 0 auto; padding:8px 14px; border:1px solid #211D16; background:#211D16; color:#F5F0E3; font-family:'IBM Plex Mono',monospace; font-size:10px; letter-spacing:0.14em; text-transform:uppercase; cursor:pointer;">Embed</button>
+                  </div>
+                  <span style="font-family:'IBM Plex Mono',monospace; font-size:9px; letter-spacing:0.12em; text-transform:uppercase; color:rgba(33,29,22,0.4); overflow:hidden; text-overflow:ellipsis; white-space:nowrap;">{{ item.embedNote }}</span>
+                </sc-if>
+              </div>
+            </div>
+          </article>
+        </sc-for>
+      </div>
+
+      <!-- ===== Standalone full stage scan (separate from the carousel) ===== -->
+      <div style="margin-top:clamp(40px,6vw,64px); border-top:3px solid #211D16;"></div>
+      <div style="margin-top:3px; border-top:1px solid #211D16;"></div>
+      <div style="display:flex; align-items:flex-end; justify-content:space-between; gap:24px; flex-wrap:wrap; margin-top:clamp(28px,4vw,40px);">
+        <div>
+          <div style="font-family:'IBM Plex Mono',monospace; font-size:11px; letter-spacing:0.22em; text-transform:uppercase; color:#A93B22;">The stage itself</div>
+          <h3 style="font-family:'EB Garamond',serif; font-size:clamp(30px,3.6vw,46px); font-weight:500; margin:10px 0 0; letter-spacing:-0.01em;">The Whole Thủy Đình in 3D</h3>
+        </div>
+        <div style="font-family:'IBM Plex Mono',monospace; font-size:10px; letter-spacing:0.18em; text-transform:uppercase; color:#7A6F4E;">3D environment record · MRN.3D.STAGE</div>
+      </div>
+      <p style="font-size:14.5px; line-height:1.7; color:rgba(33,29,22,0.7); max-width:72ch; margin:18px 0 0; text-wrap:pretty;">One scan of the water pavilion and its pond as a whole — the stage, not a single puppet. Name it and paste a SuperSplat link to embed the complete environment.</p>
+
+      <article style="margin-top:26px; border:1px solid rgba(33,29,22,0.35); background:#F9F5EA; display:flex; flex-direction:column;">
+        <div style="display:flex; justify-content:space-between; gap:12px; padding:14px 22px; border-bottom:1px solid rgba(33,29,22,0.2); align-items:baseline;">
+          <span style="font-family:'IBM Plex Mono',monospace; font-size:11px; letter-spacing:0.12em; color:#A93B22;">MRN.3D.STAGE</span>
+          <span style="font-family:'IBM Plex Mono',monospace; font-size:10px; letter-spacing:0.16em; text-transform:uppercase; color:#7A6F4E;">Stage · 3D environment record</span>
+        </div>
+        <div style="position:relative; aspect-ratio:16 / 9; background:#14110D; overflow:hidden; border-bottom:1px solid rgba(33,29,22,0.25);">
+          <sc-if value="{{ hasStageScan }}" hint-placeholder-val="{{ false }}">
+            <iframe src="{{ stageScanUrl }}" allow="fullscreen; xr-spatial-tracking; accelerometer; gyroscope" allowfullscreen="true" style="position:absolute; inset:0; width:100%; height:100%; border:0; display:block; background:#14110D;"></iframe>
+            <span style="position:absolute; top:14px; left:16px; pointer-events:none; font-family:'IBM Plex Mono',monospace; font-size:9px; letter-spacing:0.16em; text-transform:uppercase; color:rgba(245,240,227,0.55);">SuperSplat embed</span>
+          </sc-if>
+          <sc-if value="{{ noStageScan }}" hint-placeholder-val="{{ true }}">
+            <div style="position:absolute; inset:0; display:flex; flex-direction:column; align-items:center; justify-content:center; gap:12px; padding:30px; text-align:center; background:repeating-linear-gradient(45deg, rgba(245,240,227,0.04) 0px, rgba(245,240,227,0.04) 7px, rgba(0,0,0,0) 7px, rgba(0,0,0,0) 14px), #14110D;">
+              <div style="font-family:'IBM Plex Mono',monospace; font-size:9px; letter-spacing:0.18em; text-transform:uppercase; color:rgba(245,240,227,0.5);">Stage 3D slot — empty</div>
+              <div style="font-family:'EB Garamond',serif; font-size:21px; line-height:1.3; color:#F5F0E3; max-width:32ch;">Paste a SuperSplat link below to embed the whole-stage scan</div>
+            </div>
+          </sc-if>
+        </div>
+        <div style="padding:clamp(20px,3vw,30px) clamp(20px,3vw,24px); display:flex; flex-direction:column; gap:8px;">
+          <div style="font-family:'IBM Plex Mono',monospace; font-size:9px; letter-spacing:0.2em; text-transform:uppercase; color:#A93B22;">Name of stage scan</div>
+          <div style="font-family:'EB Garamond',serif; font-size:clamp(22px,2.6vw,30px); font-weight:500; line-height:1.2;">{{ stageNameDisplay }}</div>
+        </div>
+      </article>
+    </div>
+    <div style="{{ railDimStyle }}"></div>
+  </section>
+
+  <!-- ======================= SECTION IV — SOUNDSCAPES GALLERY ======================= -->
+  <section id="soundscapes" data-screen-label="Soundscapes" style="border-bottom:1px solid rgba(33,29,22,0.3);">
+    <div style="max-width:1280px; margin:0 auto; padding:clamp(64px,8vw,104px) clamp(20px,5vw,56px);">
+      <div data-reveal="" style="display:flex; align-items:flex-end; justify-content:space-between; gap:24px; flex-wrap:wrap; border-bottom:1px solid rgba(33,29,22,0.55); padding-bottom:16px;">
+        <div>
+          <div style="font-family:'IBM Plex Mono',monospace; font-size:11px; letter-spacing:0.22em; text-transform:uppercase; color:#A93B22;">Section IV — In the Audience</div>
+          <h2 style="font-family:'EB Garamond',serif; font-size:clamp(36px,4.5vw,54px); font-weight:500; margin:12px 0 0; letter-spacing:-0.01em;">A Night on the Water</h2>
+        </div>
+        <div style="display:flex; gap:10px;">
+          <button onClick="{{ onSndPrev }}" style="width:44px; height:44px; border:1px solid #211D16; background:transparent; color:#211D16; font-family:'IBM Plex Mono',monospace; font-size:15px; cursor:pointer;" style-hover="background:#211D16; color:#F5F0E3;">←</button>
+          <button onClick="{{ onSndNext }}" style="width:44px; height:44px; border:1px solid #211D16; background:transparent; color:#211D16; font-family:'IBM Plex Mono',monospace; font-size:15px; cursor:pointer;" style-hover="background:#211D16; color:#F5F0E3;">→</button>
+        </div>
+      </div>
+      <p style="font-size:14.5px; line-height:1.7; color:rgba(33,29,22,0.7); max-width:72ch; margin:22px 0 0; text-wrap:pretty;">Eight moments from one evening at the pond, in order — arriving, the orchestra, the dragons, the walk home. Each plate holds a field photograph and an audio slot; paste a SoundCloud link to publish it.</p>
+
+      <div ref="{{ sndRailRef }}" style="display:flex; gap:24px; overflow-x:auto; scroll-snap-type:x mandatory; padding:28px 2px 22px; scrollbar-width:thin;">
+        <article style="flex:0 0 auto; width:min(360px,82vw); scroll-snap-align:start; border:1px solid rgba(33,29,22,0.35); background:#F9F5EA; display:flex; flex-direction:column;">
+            <div style="position:relative; height:208px; background:linear-gradient(180deg, rgba(20,17,13,0.5) 0%, rgba(20,17,13,0) 42%, rgba(20,17,13,0) 100%), url('https://lins.com.vn/wp-content/uploads/2025/07/mua-roi-nuoc-lins-vietnam-6.jpg') center/cover no-repeat, #14110D; border-bottom:1px solid rgba(33,29,22,0.25); display:flex; align-items:center; justify-content:center; padding:0 24px;">
+              <span style="position:absolute; top:12px; left:14px; font-family:'IBM Plex Mono',monospace; font-size:11px; letter-spacing:0.12em; color:#F5F0E3; text-shadow:0 1px 3px rgba(0,0,0,0.6);">MRN.SND.001</span>
+              <span style="position:absolute; top:12px; right:14px; font-family:'IBM Plex Mono',monospace; font-size:9px; letter-spacing:0.16em; text-transform:uppercase; color:rgba(245,240,227,0.85); text-shadow:0 1px 3px rgba(0,0,0,0.6);">03:10</span>
+              <span style="font-family:'IBM Plex Mono',monospace; font-size:10px; letter-spacing:0.14em; text-transform:uppercase; color:rgba(33,29,22,0.5); text-align:center;"></span>
+            </div>
+            <div style="padding:22px 20px; display:flex; flex-direction:column; gap:12px; flex:1;">
+              <h3 style="font-family:'EB Garamond',serif; font-size:24px; font-weight:500; margin:0; line-height:1.2; text-wrap:balance;">Intro Music</h3>
+              <div style="font-family:'IBM Plex Mono',monospace; font-size:10px; letter-spacing:0.14em; text-transform:uppercase; color:rgba(33,29,22,0.55); line-height:1.6;">Overture</div>
+              <div style="font-family:'IBM Plex Mono',monospace; font-size:10px; letter-spacing:0.12em; text-transform:uppercase; color:rgba(33,29,22,0.4);">Thăng Long Theatre, Hà Nội · 2026</div>
+              <p style="margin:0; font-size:13.5px; line-height:1.65; color:rgba(33,29,22,0.8); text-wrap:pretty;">The opening melody drifts out over the pond as the crowd settles and the lamps come up.</p>
+              <div style="height:40px; margin-top:2px; background:repeating-linear-gradient(90deg, rgba(33,29,22,0.28) 0px, rgba(33,29,22,0.28) 2px, rgba(0,0,0,0) 2px, rgba(0,0,0,0) 6px); border-bottom:1px solid rgba(33,29,22,0.22);"></div>
+              <div style="margin-top:auto; display:flex; flex-direction:column; gap:10px; padding-top:8px;">
+                <sc-if value="{{ snd1.hasSC }}" hint-placeholder-val="{{ false }}">
+                  <iframe src="{{ snd1.scUrl }}" allow="autoplay" scrolling="no" frameborder="no" style="display:block; width:100%; height:120px; border:1px solid rgba(33,29,22,0.35);"></iframe>
+                </sc-if>
+                <sc-if value="{{ snd1.noSC }}" hint-placeholder-val="{{ true }}">
+                  <div style="display:flex; gap:8px; align-items:center;">
+                    <input value="{{ snd1.embedDraft }}" onChange="{{ snd1.onDraft }}" onKeyDown="{{ snd1.onKey }}" placeholder="Paste SoundCloud link…" style="flex:1; min-width:0; padding:8px 11px; border:1px solid rgba(33,29,22,0.45); background:#FBF8EF; color:#211D16; font-family:'IBM Plex Mono',monospace; font-size:10px;">
+                    <button onClick="{{ snd1.onEmbed }}" style="flex:0 0 auto; padding:8px 14px; border:1px solid #211D16; background:#211D16; color:#F5F0E3; font-family:'IBM Plex Mono',monospace; font-size:10px; letter-spacing:0.14em; text-transform:uppercase; cursor:pointer;">Embed</button>
+                  </div>
+                  <span style="font-family:'IBM Plex Mono',monospace; font-size:9px; letter-spacing:0.12em; text-transform:uppercase; color:rgba(33,29,22,0.4); overflow:hidden; text-overflow:ellipsis; white-space:nowrap;">{{ snd1.embedNote }}</span>
+                </sc-if>
+              </div>
+            </div>
+          </article>
+          <article style="flex:0 0 auto; width:min(360px,82vw); scroll-snap-align:start; border:1px solid rgba(33,29,22,0.35); background:#F9F5EA; display:flex; flex-direction:column;">
+            <div style="position:relative; height:208px; background:linear-gradient(180deg, rgba(20,17,13,0.5) 0%, rgba(20,17,13,0) 42%, rgba(20,17,13,0) 100%), url('https://lins.com.vn/wp-content/uploads/2025/07/mua-roi-nuoc-lins-vietnam-8.jpg') center/cover no-repeat, #14110D; border-bottom:1px solid rgba(33,29,22,0.25); display:flex; align-items:center; justify-content:center; padding:0 24px;">
+              <span style="position:absolute; top:12px; left:14px; font-family:'IBM Plex Mono',monospace; font-size:11px; letter-spacing:0.12em; color:#F5F0E3; text-shadow:0 1px 3px rgba(0,0,0,0.6);">MRN.SND.002</span>
+              <span style="position:absolute; top:12px; right:14px; font-family:'IBM Plex Mono',monospace; font-size:9px; letter-spacing:0.16em; text-transform:uppercase; color:rgba(245,240,227,0.85); text-shadow:0 1px 3px rgba(0,0,0,0.6);">01:24</span>
+              <span style="font-family:'IBM Plex Mono',monospace; font-size:10px; letter-spacing:0.14em; text-transform:uppercase; color:rgba(33,29,22,0.5); text-align:center;"></span>
+            </div>
+            <div style="padding:22px 20px; display:flex; flex-direction:column; gap:12px; flex:1;">
+              <h3 style="font-family:'EB Garamond',serif; font-size:24px; font-weight:500; margin:0; line-height:1.2; text-wrap:balance;">Bà Con Ơi</h3>
+              <div style="font-family:'IBM Plex Mono',monospace; font-size:10px; letter-spacing:0.14em; text-transform:uppercase; color:rgba(33,29,22,0.55); line-height:1.6;">Tễu’s welcome</div>
+              <div style="font-family:'IBM Plex Mono',monospace; font-size:10px; letter-spacing:0.12em; text-transform:uppercase; color:rgba(33,29,22,0.4);">Thăng Long Theatre, Hà Nội · 2026</div>
+              <p style="margin:0; font-size:13.5px; line-height:1.65; color:rgba(33,29,22,0.8); text-wrap:pretty;">Tễu calls out across the water — “bà con ơi!” — greeting the audience, and the evening properly begins.</p>
+              <div style="height:40px; margin-top:2px; background:repeating-linear-gradient(90deg, rgba(33,29,22,0.28) 0px, rgba(33,29,22,0.28) 2px, rgba(0,0,0,0) 2px, rgba(0,0,0,0) 6px); border-bottom:1px solid rgba(33,29,22,0.22);"></div>
+              <div style="margin-top:auto; display:flex; flex-direction:column; gap:10px; padding-top:8px;">
+                <sc-if value="{{ snd2.hasSC }}" hint-placeholder-val="{{ false }}">
+                  <iframe src="{{ snd2.scUrl }}" allow="autoplay" scrolling="no" frameborder="no" style="display:block; width:100%; height:120px; border:1px solid rgba(33,29,22,0.35);"></iframe>
+                </sc-if>
+                <sc-if value="{{ snd2.noSC }}" hint-placeholder-val="{{ true }}">
+                  <div style="display:flex; gap:8px; align-items:center;">
+                    <input value="{{ snd2.embedDraft }}" onChange="{{ snd2.onDraft }}" onKeyDown="{{ snd2.onKey }}" placeholder="Paste SoundCloud link…" style="flex:1; min-width:0; padding:8px 11px; border:1px solid rgba(33,29,22,0.45); background:#FBF8EF; color:#211D16; font-family:'IBM Plex Mono',monospace; font-size:10px;">
+                    <button onClick="{{ snd2.onEmbed }}" style="flex:0 0 auto; padding:8px 14px; border:1px solid #211D16; background:#211D16; color:#F5F0E3; font-family:'IBM Plex Mono',monospace; font-size:10px; letter-spacing:0.14em; text-transform:uppercase; cursor:pointer;">Embed</button>
+                  </div>
+                  <span style="font-family:'IBM Plex Mono',monospace; font-size:9px; letter-spacing:0.12em; text-transform:uppercase; color:rgba(33,29,22,0.4); overflow:hidden; text-overflow:ellipsis; white-space:nowrap;">{{ snd2.embedNote }}</span>
+                </sc-if>
+              </div>
+            </div>
+          </article>
+          <article style="flex:0 0 auto; width:min(360px,82vw); scroll-snap-align:start; border:1px solid rgba(33,29,22,0.35); background:#F9F5EA; display:flex; flex-direction:column;">
+            <div style="position:relative; height:208px; background:linear-gradient(180deg, rgba(20,17,13,0.5) 0%, rgba(20,17,13,0) 42%, rgba(20,17,13,0) 100%), url('https://www.thanglongwaterpuppet.org/wp-content/uploads/2025/07/Da%CC%80n-nha%CC%A3c-1.jpg') center/cover no-repeat, #14110D; border-bottom:1px solid rgba(33,29,22,0.25); display:flex; align-items:center; justify-content:center; padding:0 24px;">
+              <span style="position:absolute; top:12px; left:14px; font-family:'IBM Plex Mono',monospace; font-size:11px; letter-spacing:0.12em; color:#F5F0E3; text-shadow:0 1px 3px rgba(0,0,0,0.6);">MRN.SND.003</span>
+              <span style="position:absolute; top:12px; right:14px; font-family:'IBM Plex Mono',monospace; font-size:9px; letter-spacing:0.16em; text-transform:uppercase; color:rgba(245,240,227,0.85); text-shadow:0 1px 3px rgba(0,0,0,0.6);">04:02</span>
+              <span style="font-family:'IBM Plex Mono',monospace; font-size:10px; letter-spacing:0.14em; text-transform:uppercase; color:rgba(33,29,22,0.5); text-align:center;"></span>
+            </div>
+            <div style="padding:22px 20px; display:flex; flex-direction:column; gap:12px; flex:1;">
+              <h3 style="font-family:'EB Garamond',serif; font-size:24px; font-weight:500; margin:0; line-height:1.2; text-wrap:balance;">Đàn Bầu Invites the Puppets</h3>
+              <div style="font-family:'IBM Plex Mono',monospace; font-size:10px; letter-spacing:0.14em; text-transform:uppercase; color:rgba(33,29,22,0.55); line-height:1.6;">Full ensemble</div>
+              <div style="font-family:'IBM Plex Mono',monospace; font-size:10px; letter-spacing:0.12em; text-transform:uppercase; color:rgba(33,29,22,0.4);">Thăng Long Theatre, Hà Nội · 2026</div>
+              <p style="margin:0; font-size:13.5px; line-height:1.65; color:rgba(33,29,22,0.8); text-wrap:pretty;">The đàn bầu leads and the whole ensemble joins in, calling the puppets out onto the water.</p>
+              <div style="height:40px; margin-top:2px; background:repeating-linear-gradient(90deg, rgba(33,29,22,0.28) 0px, rgba(33,29,22,0.28) 2px, rgba(0,0,0,0) 2px, rgba(0,0,0,0) 6px); border-bottom:1px solid rgba(33,29,22,0.22);"></div>
+              <div style="margin-top:auto; display:flex; flex-direction:column; gap:10px; padding-top:8px;">
+                <sc-if value="{{ snd3.hasSC }}" hint-placeholder-val="{{ false }}">
+                  <iframe src="{{ snd3.scUrl }}" allow="autoplay" scrolling="no" frameborder="no" style="display:block; width:100%; height:120px; border:1px solid rgba(33,29,22,0.35);"></iframe>
+                </sc-if>
+                <sc-if value="{{ snd3.noSC }}" hint-placeholder-val="{{ true }}">
+                  <div style="display:flex; gap:8px; align-items:center;">
+                    <input value="{{ snd3.embedDraft }}" onChange="{{ snd3.onDraft }}" onKeyDown="{{ snd3.onKey }}" placeholder="Paste SoundCloud link…" style="flex:1; min-width:0; padding:8px 11px; border:1px solid rgba(33,29,22,0.45); background:#FBF8EF; color:#211D16; font-family:'IBM Plex Mono',monospace; font-size:10px;">
+                    <button onClick="{{ snd3.onEmbed }}" style="flex:0 0 auto; padding:8px 14px; border:1px solid #211D16; background:#211D16; color:#F5F0E3; font-family:'IBM Plex Mono',monospace; font-size:10px; letter-spacing:0.14em; text-transform:uppercase; cursor:pointer;">Embed</button>
+                  </div>
+                  <span style="font-family:'IBM Plex Mono',monospace; font-size:9px; letter-spacing:0.12em; text-transform:uppercase; color:rgba(33,29,22,0.4); overflow:hidden; text-overflow:ellipsis; white-space:nowrap;">{{ snd3.embedNote }}</span>
+                </sc-if>
+              </div>
+            </div>
+          </article>
+          <article style="flex:0 0 auto; width:min(360px,82vw); scroll-snap-align:start; border:1px solid rgba(33,29,22,0.35); background:#F9F5EA; display:flex; flex-direction:column;">
+            <div style="position:relative; height:208px; background:linear-gradient(180deg, rgba(20,17,13,0.5) 0%, rgba(20,17,13,0) 42%, rgba(20,17,13,0) 100%), url('https://i.ytimg.com/vi/oCPJFeAcdCU/maxresdefault.jpg') center/cover no-repeat, #14110D; border-bottom:1px solid rgba(33,29,22,0.25); display:flex; align-items:center; justify-content:center; padding:0 24px;">
+              <span style="position:absolute; top:12px; left:14px; font-family:'IBM Plex Mono',monospace; font-size:11px; letter-spacing:0.12em; color:#F5F0E3; text-shadow:0 1px 3px rgba(0,0,0,0.6);">MRN.SND.004</span>
+              <span style="position:absolute; top:12px; right:14px; font-family:'IBM Plex Mono',monospace; font-size:9px; letter-spacing:0.16em; text-transform:uppercase; color:rgba(245,240,227,0.85); text-shadow:0 1px 3px rgba(0,0,0,0.6);">02:48</span>
+              <span style="font-family:'IBM Plex Mono',monospace; font-size:10px; letter-spacing:0.14em; text-transform:uppercase; color:rgba(33,29,22,0.5); text-align:center;"></span>
+            </div>
+            <div style="padding:22px 20px; display:flex; flex-direction:column; gap:12px; flex:1;">
+              <h3 style="font-family:'EB Garamond',serif; font-size:24px; font-weight:500; margin:0; line-height:1.2; text-wrap:balance;">“Chàng Đây Rồi” — Tễu Steps Out</h3>
+              <div style="font-family:'IBM Plex Mono',monospace; font-size:10px; letter-spacing:0.14em; text-transform:uppercase; color:rgba(33,29,22,0.55); line-height:1.6;">First entrance</div>
+              <div style="font-family:'IBM Plex Mono',monospace; font-size:10px; letter-spacing:0.12em; text-transform:uppercase; color:rgba(33,29,22,0.4);">Thăng Long Theatre, Hà Nội · 2026</div>
+              <p style="margin:0; font-size:13.5px; line-height:1.65; color:rgba(33,29,22,0.8); text-wrap:pretty;">“Chàng đây rồi!” — the jester announces himself, and the audience answers with laughter.</p>
+              <div style="height:40px; margin-top:2px; background:repeating-linear-gradient(90deg, rgba(33,29,22,0.28) 0px, rgba(33,29,22,0.28) 2px, rgba(0,0,0,0) 2px, rgba(0,0,0,0) 6px); border-bottom:1px solid rgba(33,29,22,0.22);"></div>
+              <div style="margin-top:auto; display:flex; flex-direction:column; gap:10px; padding-top:8px;">
+                <sc-if value="{{ snd4.hasSC }}" hint-placeholder-val="{{ false }}">
+                  <iframe src="{{ snd4.scUrl }}" allow="autoplay" scrolling="no" frameborder="no" style="display:block; width:100%; height:120px; border:1px solid rgba(33,29,22,0.35);"></iframe>
+                </sc-if>
+                <sc-if value="{{ snd4.noSC }}" hint-placeholder-val="{{ true }}">
+                  <div style="display:flex; gap:8px; align-items:center;">
+                    <input value="{{ snd4.embedDraft }}" onChange="{{ snd4.onDraft }}" onKeyDown="{{ snd4.onKey }}" placeholder="Paste SoundCloud link…" style="flex:1; min-width:0; padding:8px 11px; border:1px solid rgba(33,29,22,0.45); background:#FBF8EF; color:#211D16; font-family:'IBM Plex Mono',monospace; font-size:10px;">
+                    <button onClick="{{ snd4.onEmbed }}" style="flex:0 0 auto; padding:8px 14px; border:1px solid #211D16; background:#211D16; color:#F5F0E3; font-family:'IBM Plex Mono',monospace; font-size:10px; letter-spacing:0.14em; text-transform:uppercase; cursor:pointer;">Embed</button>
+                  </div>
+                  <span style="font-family:'IBM Plex Mono',monospace; font-size:9px; letter-spacing:0.12em; text-transform:uppercase; color:rgba(33,29,22,0.4); overflow:hidden; text-overflow:ellipsis; white-space:nowrap;">{{ snd4.embedNote }}</span>
+                </sc-if>
+              </div>
+            </div>
+          </article>
+          <article style="flex:0 0 auto; width:min(360px,82vw); scroll-snap-align:start; border:1px solid rgba(33,29,22,0.35); background:#F9F5EA; display:flex; flex-direction:column;">
+            <div style="position:relative; height:208px; background:linear-gradient(180deg, rgba(20,17,13,0.5) 0%, rgba(20,17,13,0) 42%, rgba(20,17,13,0) 100%), url('https://live.staticflickr.com/4094/4853744767_3f58af9738_b.jpg') center/cover no-repeat, #14110D; border-bottom:1px solid rgba(33,29,22,0.25); display:flex; align-items:center; justify-content:center; padding:0 24px;">
+              <span style="position:absolute; top:12px; left:14px; font-family:'IBM Plex Mono',monospace; font-size:11px; letter-spacing:0.12em; color:#F5F0E3; text-shadow:0 1px 3px rgba(0,0,0,0.6);">MRN.SND.005</span>
+              <span style="position:absolute; top:12px; right:14px; font-family:'IBM Plex Mono',monospace; font-size:9px; letter-spacing:0.16em; text-transform:uppercase; color:rgba(245,240,227,0.85); text-shadow:0 1px 3px rgba(0,0,0,0.6);">02:55</span>
+            </div>
+            <div style="padding:22px 20px; display:flex; flex-direction:column; gap:12px; flex:1;">
+              <h3 style="font-family:'EB Garamond',serif; font-size:24px; font-weight:500; margin:0; line-height:1.2; text-wrap:balance;">Brass Builds Tension</h3>
+              <div style="font-family:'IBM Plex Mono',monospace; font-size:10px; letter-spacing:0.14em; text-transform:uppercase; color:rgba(33,29,22,0.55); line-height:1.6;">Brass & percussion</div>
+              <div style="font-family:'IBM Plex Mono',monospace; font-size:10px; letter-spacing:0.12em; text-transform:uppercase; color:rgba(33,29,22,0.4);">Thăng Long Theatre, Hà Nội · 2026</div>
+              <p style="margin:0; font-size:13.5px; line-height:1.65; color:rgba(33,29,22,0.8); text-wrap:pretty;">The brass swells and the drums tighten, winding the scene up toward its turning point.</p>
+              <div style="height:40px; margin-top:2px; background:repeating-linear-gradient(90deg, rgba(33,29,22,0.28) 0px, rgba(33,29,22,0.28) 2px, rgba(0,0,0,0) 2px, rgba(0,0,0,0) 6px); border-bottom:1px solid rgba(33,29,22,0.22);"></div>
+              <div style="margin-top:auto; display:flex; flex-direction:column; gap:10px; padding-top:8px;">
+                <sc-if value="{{ snd5.hasSC }}" hint-placeholder-val="{{ false }}">
+                  <iframe src="{{ snd5.scUrl }}" allow="autoplay" scrolling="no" frameborder="no" style="display:block; width:100%; height:120px; border:1px solid rgba(33,29,22,0.35);"></iframe>
+                </sc-if>
+                <sc-if value="{{ snd5.noSC }}" hint-placeholder-val="{{ true }}">
+                  <div style="display:flex; gap:8px; align-items:center;">
+                    <input value="{{ snd5.embedDraft }}" onChange="{{ snd5.onDraft }}" onKeyDown="{{ snd5.onKey }}" placeholder="Paste SoundCloud link…" style="flex:1; min-width:0; padding:8px 11px; border:1px solid rgba(33,29,22,0.45); background:#FBF8EF; color:#211D16; font-family:'IBM Plex Mono',monospace; font-size:10px;">
+                    <button onClick="{{ snd5.onEmbed }}" style="flex:0 0 auto; padding:8px 14px; border:1px solid #211D16; background:#211D16; color:#F5F0E3; font-family:'IBM Plex Mono',monospace; font-size:10px; letter-spacing:0.14em; text-transform:uppercase; cursor:pointer;">Embed</button>
+                  </div>
+                  <span style="font-family:'IBM Plex Mono',monospace; font-size:9px; letter-spacing:0.12em; text-transform:uppercase; color:rgba(33,29,22,0.4); overflow:hidden; text-overflow:ellipsis; white-space:nowrap;">{{ snd5.embedNote }}</span>
+                </sc-if>
+              </div>
+            </div>
+          </article>
+          <article style="flex:0 0 auto; width:min(360px,82vw); scroll-snap-align:start; border:1px solid rgba(33,29,22,0.35); background:#F9F5EA; display:flex; flex-direction:column;">
+            <div style="position:relative; height:208px; background:linear-gradient(180deg, rgba(20,17,13,0.5) 0%, rgba(20,17,13,0) 42%, rgba(20,17,13,0) 100%), url('https://phongnhadiscovery.com/sites/default/files/mua-roi-nuoc.jpg') center/cover no-repeat, #14110D; border-bottom:1px solid rgba(33,29,22,0.25); display:flex; align-items:center; justify-content:center; padding:0 24px;">
+              <span style="position:absolute; top:12px; left:14px; font-family:'IBM Plex Mono',monospace; font-size:11px; letter-spacing:0.12em; color:#F5F0E3; text-shadow:0 1px 3px rgba(0,0,0,0.6);">MRN.SND.006</span>
+              <span style="position:absolute; top:12px; right:14px; font-family:'IBM Plex Mono',monospace; font-size:9px; letter-spacing:0.16em; text-transform:uppercase; color:rgba(245,240,227,0.85); text-shadow:0 1px 3px rgba(0,0,0,0.6);">04:20</span>
+              <span style="font-family:'IBM Plex Mono',monospace; font-size:10px; letter-spacing:0.14em; text-transform:uppercase; color:rgba(33,29,22,0.5); text-align:center;"></span>
+            </div>
+            <div style="padding:22px 20px; display:flex; flex-direction:column; gap:12px; flex:1;">
+              <h3 style="font-family:'EB Garamond',serif; font-size:24px; font-weight:500; margin:0; line-height:1.2; text-wrap:balance;">The Soprano’s Song</h3>
+              <div style="font-family:'IBM Plex Mono',monospace; font-size:10px; letter-spacing:0.14em; text-transform:uppercase; color:rgba(33,29,22,0.55); line-height:1.6;">Solo voice</div>
+              <div style="font-family:'IBM Plex Mono',monospace; font-size:10px; letter-spacing:0.12em; text-transform:uppercase; color:rgba(33,29,22,0.4);">Thăng Long Theatre, Hà Nội · 2026</div>
+              <p style="margin:0; font-size:13.5px; line-height:1.65; color:rgba(33,29,22,0.8); text-wrap:pretty;">A lone soprano carries the melody across the pond, and the crowd falls silent to listen.</p>
+              <div style="height:40px; margin-top:2px; background:repeating-linear-gradient(90deg, rgba(33,29,22,0.28) 0px, rgba(33,29,22,0.28) 2px, rgba(0,0,0,0) 2px, rgba(0,0,0,0) 6px); border-bottom:1px solid rgba(33,29,22,0.22);"></div>
+              <div style="margin-top:auto; display:flex; flex-direction:column; gap:10px; padding-top:8px;">
+                <sc-if value="{{ snd6.hasSC }}" hint-placeholder-val="{{ false }}">
+                  <iframe src="{{ snd6.scUrl }}" allow="autoplay" scrolling="no" frameborder="no" style="display:block; width:100%; height:120px; border:1px solid rgba(33,29,22,0.35);"></iframe>
+                </sc-if>
+                <sc-if value="{{ snd6.noSC }}" hint-placeholder-val="{{ true }}">
+                  <div style="display:flex; gap:8px; align-items:center;">
+                    <input value="{{ snd6.embedDraft }}" onChange="{{ snd6.onDraft }}" onKeyDown="{{ snd6.onKey }}" placeholder="Paste SoundCloud link…" style="flex:1; min-width:0; padding:8px 11px; border:1px solid rgba(33,29,22,0.45); background:#FBF8EF; color:#211D16; font-family:'IBM Plex Mono',monospace; font-size:10px;">
+                    <button onClick="{{ snd6.onEmbed }}" style="flex:0 0 auto; padding:8px 14px; border:1px solid #211D16; background:#211D16; color:#F5F0E3; font-family:'IBM Plex Mono',monospace; font-size:10px; letter-spacing:0.14em; text-transform:uppercase; cursor:pointer;">Embed</button>
+                  </div>
+                  <span style="font-family:'IBM Plex Mono',monospace; font-size:9px; letter-spacing:0.12em; text-transform:uppercase; color:rgba(33,29,22,0.4); overflow:hidden; text-overflow:ellipsis; white-space:nowrap;">{{ snd6.embedNote }}</span>
+                </sc-if>
+              </div>
+            </div>
+          </article>
+          <article style="flex:0 0 auto; width:min(360px,82vw); scroll-snap-align:start; border:1px solid rgba(33,29,22,0.35); background:#F9F5EA; display:flex; flex-direction:column;">
+            <div style="position:relative; height:208px; background:linear-gradient(180deg, rgba(20,17,13,0.5) 0%, rgba(20,17,13,0) 42%, rgba(20,17,13,0) 100%), url('https://nhahatmuaroivietnam.vn/sites/default/files/ttct2.jpg') center/cover no-repeat, #14110D; border-bottom:1px solid rgba(33,29,22,0.25); display:flex; align-items:center; justify-content:center; padding:0 24px;">
+              <span style="position:absolute; top:12px; left:14px; font-family:'IBM Plex Mono',monospace; font-size:11px; letter-spacing:0.12em; color:#F5F0E3; text-shadow:0 1px 3px rgba(0,0,0,0.6);">MRN.SND.007</span>
+              <span style="position:absolute; top:12px; right:14px; font-family:'IBM Plex Mono',monospace; font-size:9px; letter-spacing:0.16em; text-transform:uppercase; color:rgba(245,240,227,0.85); text-shadow:0 1px 3px rgba(0,0,0,0.6);">03:30</span>
+            </div>
+            <div style="padding:22px 20px; display:flex; flex-direction:column; gap:12px; flex:1;">
+              <h3 style="font-family:'EB Garamond',serif; font-size:24px; font-weight:500; margin:0; line-height:1.2; text-wrap:balance;">Đất Thăng Long Hội Tụ Nhân Tài</h3>
+              <div style="font-family:'IBM Plex Mono',monospace; font-size:10px; letter-spacing:0.14em; text-transform:uppercase; color:rgba(33,29,22,0.55); line-height:1.6;">Sung verse</div>
+              <div style="font-family:'IBM Plex Mono',monospace; font-size:10px; letter-spacing:0.12em; text-transform:uppercase; color:rgba(33,29,22,0.4);">Thăng Long Theatre, Hà Nội · 2026</div>
+              <p style="margin:0; font-size:13.5px; line-height:1.65; color:rgba(33,29,22,0.8); text-wrap:pretty;">The singers raise the old line — “đất Thăng Long hội tụ nhân tài” — the land where talent gathers.</p>
+              <div style="height:40px; margin-top:2px; background:repeating-linear-gradient(90deg, rgba(33,29,22,0.28) 0px, rgba(33,29,22,0.28) 2px, rgba(0,0,0,0) 2px, rgba(0,0,0,0) 6px); border-bottom:1px solid rgba(33,29,22,0.22);"></div>
+              <div style="margin-top:auto; display:flex; flex-direction:column; gap:10px; padding-top:8px;">
+                <sc-if value="{{ snd7.hasSC }}" hint-placeholder-val="{{ false }}">
+                  <iframe src="{{ snd7.scUrl }}" allow="autoplay" scrolling="no" frameborder="no" style="display:block; width:100%; height:120px; border:1px solid rgba(33,29,22,0.35);"></iframe>
+                </sc-if>
+                <sc-if value="{{ snd7.noSC }}" hint-placeholder-val="{{ true }}">
+                  <div style="display:flex; gap:8px; align-items:center;">
+                    <input value="{{ snd7.embedDraft }}" onChange="{{ snd7.onDraft }}" onKeyDown="{{ snd7.onKey }}" placeholder="Paste SoundCloud link…" style="flex:1; min-width:0; padding:8px 11px; border:1px solid rgba(33,29,22,0.45); background:#FBF8EF; color:#211D16; font-family:'IBM Plex Mono',monospace; font-size:10px;">
+                    <button onClick="{{ snd7.onEmbed }}" style="flex:0 0 auto; padding:8px 14px; border:1px solid #211D16; background:#211D16; color:#F5F0E3; font-family:'IBM Plex Mono',monospace; font-size:10px; letter-spacing:0.14em; text-transform:uppercase; cursor:pointer;">Embed</button>
+                  </div>
+                  <span style="font-family:'IBM Plex Mono',monospace; font-size:9px; letter-spacing:0.12em; text-transform:uppercase; color:rgba(33,29,22,0.4); overflow:hidden; text-overflow:ellipsis; white-space:nowrap;">{{ snd7.embedNote }}</span>
+                </sc-if>
+              </div>
+            </div>
+          </article>
+          <article style="flex:0 0 auto; width:min(360px,82vw); scroll-snap-align:start; border:1px solid rgba(33,29,22,0.35); background:#F9F5EA; display:flex; flex-direction:column;">
+            <div style="position:relative; height:208px; background:linear-gradient(180deg, rgba(20,17,13,0.5) 0%, rgba(20,17,13,0) 42%, rgba(20,17,13,0) 100%), url('https://luhanhvietnam.com.vn/du-lich-land-tour/vnt_upload/tour/08_2019/1_copy3.jpg') center/cover no-repeat, #14110D; border-bottom:1px solid rgba(33,29,22,0.25); display:flex; align-items:center; justify-content:center; padding:0 24px;">
+              <span style="position:absolute; top:12px; left:14px; font-family:'IBM Plex Mono',monospace; font-size:11px; letter-spacing:0.12em; color:#F5F0E3; text-shadow:0 1px 3px rgba(0,0,0,0.6);">MRN.SND.008</span>
+              <span style="position:absolute; top:12px; right:14px; font-family:'IBM Plex Mono',monospace; font-size:9px; letter-spacing:0.16em; text-transform:uppercase; color:rgba(245,240,227,0.85); text-shadow:0 1px 3px rgba(0,0,0,0.6);">02:12</span>
+            </div>
+            <div style="padding:22px 20px; display:flex; flex-direction:column; gap:12px; flex:1;">
+              <h3 style="font-family:'EB Garamond',serif; font-size:24px; font-weight:500; margin:0; line-height:1.2; text-wrap:balance;">Đối Đáp — Climax & Outro</h3>
+              <div style="font-family:'IBM Plex Mono',monospace; font-size:10px; letter-spacing:0.14em; text-transform:uppercase; color:rgba(33,29,22,0.55); line-height:1.6;">Call & response</div>
+              <div style="font-family:'IBM Plex Mono',monospace; font-size:10px; letter-spacing:0.12em; text-transform:uppercase; color:rgba(33,29,22,0.4);">Thăng Long Theatre, Hà Nội · 2026</div>
+              <p style="margin:0; font-size:13.5px; line-height:1.65; color:rgba(33,29,22,0.8); text-wrap:pretty;">Voices trade back and forth in đối đáp, rising to the climax, and the closing music carries the play out.</p>
+              <div style="height:40px; margin-top:2px; background:repeating-linear-gradient(90deg, rgba(33,29,22,0.28) 0px, rgba(33,29,22,0.28) 2px, rgba(0,0,0,0) 2px, rgba(0,0,0,0) 6px); border-bottom:1px solid rgba(33,29,22,0.22);"></div>
+              <div style="margin-top:auto; display:flex; flex-direction:column; gap:10px; padding-top:8px;">
+                <sc-if value="{{ snd8.hasSC }}" hint-placeholder-val="{{ false }}">
+                  <iframe src="{{ snd8.scUrl }}" allow="autoplay" scrolling="no" frameborder="no" style="display:block; width:100%; height:120px; border:1px solid rgba(33,29,22,0.35);"></iframe>
+                </sc-if>
+                <sc-if value="{{ snd8.noSC }}" hint-placeholder-val="{{ true }}">
+                  <div style="display:flex; gap:8px; align-items:center;">
+                    <input value="{{ snd8.embedDraft }}" onChange="{{ snd8.onDraft }}" onKeyDown="{{ snd8.onKey }}" placeholder="Paste SoundCloud link…" style="flex:1; min-width:0; padding:8px 11px; border:1px solid rgba(33,29,22,0.45); background:#FBF8EF; color:#211D16; font-family:'IBM Plex Mono',monospace; font-size:10px;">
+                    <button onClick="{{ snd8.onEmbed }}" style="flex:0 0 auto; padding:8px 14px; border:1px solid #211D16; background:#211D16; color:#F5F0E3; font-family:'IBM Plex Mono',monospace; font-size:10px; letter-spacing:0.14em; text-transform:uppercase; cursor:pointer;">Embed</button>
+                  </div>
+                  <span style="font-family:'IBM Plex Mono',monospace; font-size:9px; letter-spacing:0.12em; text-transform:uppercase; color:rgba(33,29,22,0.4); overflow:hidden; text-overflow:ellipsis; white-space:nowrap;">{{ snd8.embedNote }}</span>
+                </sc-if>
+              </div>
+            </div>
+          </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ======================= SECTION V — ARCHIVE LEDGER ======================= -->
+  <section id="ledger" data-screen-label="Archive ledger" style="border-bottom:1px solid rgba(33,29,22,0.3);">
+    <div style="max-width:1280px; margin:0 auto; padding:clamp(64px,8vw,104px) clamp(20px,5vw,56px);">
+      <div ref="{{ archiveAnchorRef }}" data-reveal="" style="display:flex; align-items:flex-end; justify-content:space-between; gap:24px; flex-wrap:wrap; border-bottom:1px solid rgba(33,29,22,0.55); padding-bottom:16px;">
+        <div>
+          <div style="font-family:'IBM Plex Mono',monospace; font-size:11px; letter-spacing:0.22em; text-transform:uppercase; color:#A93B22;">Section V — The film</div>
+          <h2 style="font-family:'EB Garamond',serif; font-size:clamp(36px,4.5vw,54px); font-weight:500; margin:12px 0 0; letter-spacing:-0.01em;">A Day at the Pond, in 360°</h2>
+        </div>
+        <div style="font-family:'IBM Plex Mono',monospace; font-size:10px; letter-spacing:0.18em; text-transform:uppercase; color:rgba(33,29,22,0.5);">{{ film360.no }} · {{ film360.duration }}</div>
+      </div>
+      <p style="font-size:14.5px; line-height:1.7; color:rgba(33,29,22,0.7); max-width:72ch; margin:22px 0 0; text-wrap:pretty;">{{ film360.desc }}</p>
+
+      <article style="margin-top:36px; border:1px solid rgba(33,29,22,0.35); background:#F9F5EA;">
+        <div style="display:flex; justify-content:space-between; gap:12px; padding:14px 22px; border-bottom:1px solid rgba(33,29,22,0.2); align-items:baseline;">
+          <span style="font-family:'IBM Plex Mono',monospace; font-size:11px; letter-spacing:0.12em; color:#A93B22;">{{ film360.no }}</span>
+          <span style="font-family:'IBM Plex Mono',monospace; font-size:10px; letter-spacing:0.16em; text-transform:uppercase; color:#7A6F4E;">360° film record</span>
+        </div>
+        <div style="position:relative; aspect-ratio:16 / 9; background:#14110D; overflow:hidden; border-bottom:1px solid rgba(33,29,22,0.25);">
+          <sc-if value="{{ film360.hasFilm }}" hint-placeholder-val="{{ false }}">
+            <sc-if value="{{ film360.isDirectVideo }}" hint-placeholder-val="{{ true }}">
+              <video src="{{ film360.filmUrl }}" controls playsinline style="position:absolute; inset:0; width:100%; height:100%; object-fit:cover; background:#14110D; display:block;"></video>
+            </sc-if>
+            <sc-if value="{{ film360.isEmbedVideo }}" hint-placeholder-val="{{ false }}">
+              <iframe src="{{ film360.filmUrl }}" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share; fullscreen; xr-spatial-tracking" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen="true" style="position:absolute; inset:0; width:100%; height:100%; border:0; display:block; background:#14110D;"></iframe>
+            </sc-if>
+            <span style="position:absolute; top:14px; left:16px; pointer-events:none; font-family:'IBM Plex Mono',monospace; font-size:9px; letter-spacing:0.16em; text-transform:uppercase; color:rgba(245,240,227,0.55);">360° film</span>
+          </sc-if>
+          <sc-if value="{{ film360.noFilm }}" hint-placeholder-val="{{ true }}">
+            <div style="position:absolute; inset:0; display:flex; flex-direction:column; align-items:center; justify-content:center; gap:12px; padding:30px; text-align:center; background:repeating-linear-gradient(45deg, rgba(245,240,227,0.04) 0px, rgba(245,240,227,0.04) 7px, rgba(0,0,0,0) 7px, rgba(0,0,0,0) 14px), #14110D;">
+              <div style="font-family:'IBM Plex Mono',monospace; font-size:9px; letter-spacing:0.18em; text-transform:uppercase; color:rgba(245,240,227,0.5);">Film slot — empty</div>
+              <div style="font-family:'EB Garamond',serif; font-size:21px; line-height:1.3; color:#F5F0E3; max-width:34ch;">Paste an MP4 or 360° video link below to publish the film</div>
+            </div>
+          </sc-if>
+        </div>
+        <div style="padding:clamp(22px,3vw,34px); display:flex; flex-direction:column; gap:14px;">
+          <h3 style="font-family:'EB Garamond',serif; font-size:clamp(28px,3vw,40px); font-weight:500; margin:0; line-height:1.16; text-wrap:balance;">{{ film360.title }}</h3>
+          <div style="font-family:'IBM Plex Mono',monospace; font-size:10px; letter-spacing:0.14em; text-transform:uppercase; color:rgba(33,29,22,0.55); line-height:1.7;">{{ film360.attribution }} · {{ film360.locYear }}</div>
+          <p style="margin:0; font-size:15px; line-height:1.8; color:rgba(33,29,22,0.85); max-width:76ch; text-wrap:pretty;">{{ film360.meaning }}</p>
+        </div>
+      </article>
+    </div>
+  </section>
+
+  <!-- ======================= SECTION V — ARTISANS ======================= -->
+  <section id="artisans" data-screen-label="Artisans" style="border-bottom:1px solid rgba(33,29,22,0.3); background:linear-gradient(rgba(239,232,214,0.85), rgba(239,232,214,0.88)), url('https://cdn-images.vtv.vn/thumb_w/1200/66349b6076cb4dee98746cf1/2025/07/10/package-media-18036003877258539155551.png') center/cover no-repeat fixed;">
+    <div style="max-width:1280px; margin:0 auto; padding:clamp(64px,8vw,104px) clamp(20px,5vw,56px);">
+      <div data-reveal="" style="display:flex; align-items:flex-end; justify-content:space-between; gap:24px; flex-wrap:wrap; border-bottom:1px solid rgba(33,29,22,0.55); padding-bottom:16px;">
+        <div>
+          <div style="font-family:'IBM Plex Mono',monospace; font-size:11px; letter-spacing:0.22em; text-transform:uppercase; color:#A93B22;">Section VI — Artisans</div>
+          <h2 style="font-family:'EB Garamond',serif; font-size:clamp(36px,4.5vw,54px); font-weight:500; margin:12px 0 0; letter-spacing:-0.01em;">The Hands Behind the Screen</h2>
+        </div>
+        <div style="font-family:'IBM Plex Mono',monospace; font-size:10px; letter-spacing:0.18em; text-transform:uppercase; color:rgba(33,29,22,0.5);">Person files · MRN.P</div>
+      </div>
+
+      <div style="display:grid; grid-template-columns:repeat(auto-fit,minmax(min(320px,100%),1fr)); gap:26px; margin-top:40px;">
+        <article style="border:1px solid rgba(33,29,22,0.35); background:#F9F5EA;">
+          <div style="height:230px; background:#EDE6D2; border-bottom:1px solid rgba(33,29,22,0.25); overflow:hidden;">
+            <img src="https://cdn-i.vtcnews.vn/resize/th/upload/2025/01/15/8eff4d0cef8d53d30a9c-15284150.jpg" alt="Phan Duy Triển, master carver, Nam Định" style="width:100%; height:100%; object-fit:cover; display:block;">
+          </div>
+          <div style="padding:22px 22px 24px; display:flex; flex-direction:column; gap:10px;">
+            <h3 style="font-family:'EB Garamond',serif; font-size:27px; font-weight:500; margin:0;">Phan Duy Triển</h3>
+            <div style="font-family:'IBM Plex Mono',monospace; font-size:10px; letter-spacing:0.16em; text-transform:uppercase; color:#A93B22;">Master carver · Nam Định</div>
+            <p style="margin:0; font-size:14px; line-height:1.7; color:rgba(33,29,22,0.8); text-wrap:pretty;">The one master this archive met in person. In his Nam Định workshop he spoke of choosing sung wood, of why a puppet must be light enough to dance and heavy enough to sit in the water, and of the faces he gives to Tễu.</p>
+            <span style="font-family:'IBM Plex Mono',monospace; font-size:9px; letter-spacing:0.14em; text-transform:uppercase; color:rgba(33,29,22,0.45);">Person file MRN.P.001 · interview at MRN.OH.021</span>
+          </div>
+        </article>
+        <article style="border:1px solid rgba(33,29,22,0.35); background:#F9F5EA;">
+          <div style="height:230px; background:#EDE6D2; border-bottom:1px solid rgba(33,29,22,0.25); overflow:hidden;">
+            <img src="https://apibeta.baoninhbinh.org.vn/user-blob/15088545-560b-d200-1fa2-cc31adda5a44/2025/07/15/roi-nuoc-1_1752548899439.jpeg" alt="Water puppet guild — performers behind the screen" style="width:100%; height:100%; object-fit:cover; display:block;">
+          </div>
+          <div style="padding:22px 22px 24px; display:flex; flex-direction:column; gap:10px;">
+            <h3 style="font-family:'EB Garamond',serif; font-size:27px; font-weight:500; margin:0;">The Unnamed Guild Masters</h3>
+            <div style="font-family:'IBM Plex Mono',monospace; font-size:10px; letter-spacing:0.16em; text-transform:uppercase; color:#A93B22;">Phường rối · 15th–20th century</div>
+            <p style="margin:0; font-size:14px; line-height:1.7; color:rgba(33,29,22,0.8); text-wrap:pretty;">Most makers and performers left no signatures: the oath of secrecy kept their names out of the record. This file stands open for them — and for whatever the villages choose to add to it.</p>
+            <span style="font-family:'IBM Plex Mono',monospace; font-size:9px; letter-spacing:0.14em; text-transform:uppercase; color:rgba(33,29,22,0.45);">Person file MRN.P.000 · standing open</span>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ======================= SECTION VII — FIELD NOTES (NAM ĐỊNH BTS) ======================= -->
+  <section id="fieldnotes" data-screen-label="Field notes" style="background:#14110D; border-bottom:1px solid rgba(33,29,22,0.3); color:#F5F0E3;">
+    <div style="max-width:1280px; margin:0 auto; padding:clamp(64px,8vw,104px) clamp(20px,5vw,56px) clamp(40px,5vw,56px);">
+      <div data-reveal="" style="display:flex; align-items:flex-end; justify-content:space-between; gap:24px; flex-wrap:wrap; border-bottom:1px solid rgba(245,240,227,0.26); padding-bottom:16px;">
+        <div>
+          <div style="font-family:'IBM Plex Mono',monospace; font-size:11px; letter-spacing:0.22em; text-transform:uppercase; color:#D97A4A;">Section VII — Field notes</div>
+          <h2 style="font-family:'EB Garamond',serif; font-size:clamp(36px,4.5vw,54px); font-weight:500; margin:12px 0 0; letter-spacing:-0.01em; color:#F5F0E3;">Nam Định, Behind the Screen</h2>
+        </div>
+        <div style="display:flex; align-items:center; gap:18px;">
+          <span style="font-family:'IBM Plex Mono',monospace; font-size:10px; letter-spacing:0.18em; text-transform:uppercase; color:rgba(245,240,227,0.5);">35mm · 30 frames</span>
+          <div style="display:flex; gap:10px;">
+            <button onClick="{{ onGalPrev }}" style="width:44px; height:44px; border:1px solid rgba(245,240,227,0.55); background:transparent; color:#F5F0E3; font-family:'IBM Plex Mono',monospace; font-size:15px; cursor:pointer;" style-hover="background:#F5F0E3; color:#14110D;">←</button>
+            <button onClick="{{ onGalNext }}" style="width:44px; height:44px; border:1px solid rgba(245,240,227,0.55); background:transparent; color:#F5F0E3; font-family:'IBM Plex Mono',monospace; font-size:15px; cursor:pointer;" style-hover="background:#F5F0E3; color:#14110D;">→</button>
+          </div>
+        </div>
+      </div>
+      <p style="font-size:14.5px; line-height:1.7; color:rgba(245,240,227,0.62); max-width:72ch; margin:22px 0 0; text-wrap:pretty;">A contact strip from the field visit to Nam Định — the carving shed, the pond, the troupe between takes. Drag a photo onto any frame to develop it; swipe the strip to run down the roll.</p>
+    </div>
+
+    <!-- filmstrip -->
+    <div ref="{{ galRef }}" style="display:flex; gap:0; overflow-x:auto; scroll-snap-type:x mandatory; padding:0 0 clamp(44px,6vw,72px); scrollbar-width:thin; background:linear-gradient(#14110D,#0E0C09); box-shadow:inset 0 0 120px rgba(0,0,0,0.6);">
+      <sc-for list="{{ gallery }}" as="frame" hint-placeholder-count="8">
+        <div style="flex:0 0 auto; width:clamp(258px,70vw,358px); scroll-snap-align:center; background:#1A150E; border-right:1px solid #000;">
+          <div style="height:26px; background-color:#231D14; background-image:radial-gradient(circle at center, #0A0806 0 3.4px, rgba(0,0,0,0) 3.9px); background-size:24px 100%; background-position:center; background-repeat:repeat-x;"></div>
+          <div style="display:flex; justify-content:space-between; align-items:center; padding:4px 12px; background:#14100A;">
+            <span style="font-family:'IBM Plex Mono',monospace; font-size:8.5px; letter-spacing:0.18em; text-transform:uppercase; color:#D97A4A;">KODAK 400 · NAM ĐỊNH</span>
+            <span style="font-family:'IBM Plex Mono',monospace; font-size:8.5px; letter-spacing:0.18em; color:#D97A4A;">›{{ frame.mark }}</span>
+          </div>
+          <div style="position:relative; padding:8px; background:#0E0B07;">
+            <image-slot id="{{ frame.slotId }}" shape="rect" fit="cover" placeholder="{{ frame.placeholder }}" style="display:block; width:100%; aspect-ratio:3 / 2; background:#000;"></image-slot>
+            <span style="position:absolute; right:15px; bottom:15px; font-family:'IBM Plex Mono',monospace; font-size:11px; letter-spacing:0.08em; color:rgba(217,122,74,0.95); text-shadow:0 1px 4px rgba(0,0,0,0.9); pointer-events:none;">{{ frame.num }}</span>
+          </div>
+          <div style="display:flex; justify-content:space-between; align-items:center; padding:4px 12px; background:#14100A;">
+            <span style="font-family:'IBM Plex Mono',monospace; font-size:8.5px; letter-spacing:0.18em; color:rgba(245,240,227,0.32);">{{ frame.num }} ▸ {{ frame.mark }}</span>
+            <span style="font-family:'IBM Plex Mono',monospace; font-size:8.5px; letter-spacing:0.18em; color:rgba(245,240,227,0.32);">MRN.FN</span>
+          </div>
+          <div style="height:26px; background-color:#231D14; background-image:radial-gradient(circle at center, #0A0806 0 3.4px, rgba(0,0,0,0) 3.9px); background-size:24px 100%; background-position:center; background-repeat:repeat-x;"></div>
+        </div>
+      </sc-for>
+    </div>
+  </section>
+
+  <!-- ======================= SECTION VI — CHRONOLOGY ======================= -->
+  <section id="chronology" data-screen-label="Chronology" style="border-bottom:1px solid rgba(33,29,22,0.3);">
+    <div style="max-width:1280px; margin:0 auto; padding:clamp(64px,8vw,104px) clamp(20px,5vw,56px);">
+      <div data-reveal="" style="display:flex; align-items:flex-end; justify-content:space-between; gap:24px; flex-wrap:wrap; border-bottom:1px solid rgba(33,29,22,0.55); padding-bottom:16px;">
+        <div>
+          <div style="font-family:'IBM Plex Mono',monospace; font-size:11px; letter-spacing:0.22em; text-transform:uppercase; color:#A93B22;">Section VIII — Chronology</div>
+          <h2 style="font-family:'EB Garamond',serif; font-size:clamp(36px,4.5vw,54px); font-weight:500; margin:12px 0 0; letter-spacing:-0.01em;">A Thousand Years on Water</h2>
+        </div>
+        <div style="font-family:'IBM Plex Mono',monospace; font-size:10px; letter-spacing:0.18em; text-transform:uppercase; color:rgba(33,29,22,0.5);">Ledger of dates · c. 1010 — 2026</div>
+      </div>
+
+      <div style="margin-top:40px; max-width:880px;">
+        <div style="display:grid; grid-template-columns:minmax(96px,130px) 1fr; gap:clamp(18px,3vw,40px); padding:26px 0; border-bottom:1px solid rgba(33,29,22,0.22);">
+          <div style="font-family:'IBM Plex Mono',monospace; font-size:13px; color:#A93B22; padding-top:6px;">c. 1010</div>
+          <div>
+            <h3 style="font-family:'EB Garamond',serif; font-size:27px; font-weight:500; margin:0;">Art of the Delta Courts</h3>
+            <p style="margin:10px 0 0; font-size:15px; line-height:1.75; color:rgba(33,29,22,0.8); text-wrap:pretty;">Under the Lý dynasty, water puppetry moves between village ponds and royal entertainments in the Red River Delta — the only puppet tradition on earth performed on water.</p>
+          </div>
+        </div>
+        <div style="display:grid; grid-template-columns:minmax(96px,130px) 1fr; gap:clamp(18px,3vw,40px); padding:26px 0; border-bottom:1px solid rgba(33,29,22,0.22);">
+          <div style="font-family:'IBM Plex Mono',monospace; font-size:13px; color:#A93B22; padding-top:6px;">1121</div>
+          <div>
+            <h3 style="font-family:'EB Garamond',serif; font-size:27px; font-weight:500; margin:0;">The Stone Record</h3>
+            <p style="margin:10px 0 0; font-size:15px; line-height:1.75; color:rgba(33,29,22,0.8); text-wrap:pretty;">The Sùng Thiện Diên Linh stele at Đọi Sơn pagoda describes puppet scenes and a golden tortoise performed on the river for the king's birthday — the art's earliest surviving written record.</p>
+          </div>
+        </div>
+        <div style="display:grid; grid-template-columns:minmax(96px,130px) 1fr; gap:clamp(18px,3vw,40px); padding:26px 0; border-bottom:1px solid rgba(33,29,22,0.22);">
+          <div style="font-family:'IBM Plex Mono',monospace; font-size:13px; color:#A93B22; padding-top:6px;">15th–19th c.</div>
+          <div>
+            <h3 style="font-family:'EB Garamond',serif; font-size:27px; font-weight:500; margin:0;">The Secret Guilds</h3>
+            <p style="margin:10px 0 0; font-size:15px; line-height:1.75; color:rgba(33,29,22,0.8); text-wrap:pretty;">Village guilds — phường rối — guard their mechanisms as hereditary secrets, sworn at the communal house. Techniques pass from father to son; rival villages never share a knot.</p>
+          </div>
+        </div>
+        <div style="display:grid; grid-template-columns:minmax(96px,130px) 1fr; gap:clamp(18px,3vw,40px); padding:26px 0; border-bottom:1px solid rgba(33,29,22,0.22);">
+          <div style="font-family:'IBM Plex Mono',monospace; font-size:13px; color:#A93B22; padding-top:6px;">1945–54</div>
+          <div>
+            <h3 style="font-family:'EB Garamond',serif; font-size:27px; font-weight:500; margin:0;">The Silent Ponds</h3>
+            <p style="margin:10px 0 0; font-size:15px; line-height:1.75; color:rgba(33,29,22,0.8); text-wrap:pretty;">War empties the villages and the ponds fall silent. Puppets are crated, buried, lost; some guilds never perform again.</p>
+          </div>
+        </div>
+        <div style="display:grid; grid-template-columns:minmax(96px,130px) 1fr; gap:clamp(18px,3vw,40px); padding:26px 0; border-bottom:1px solid rgba(33,29,22,0.22);">
+          <div style="font-family:'IBM Plex Mono',monospace; font-size:13px; color:#A93B22; padding-top:6px;">1969</div>
+          <div>
+            <h3 style="font-family:'EB Garamond',serif; font-size:27px; font-weight:500; margin:0;">A National Stage</h3>
+            <p style="margin:10px 0 0; font-size:15px; line-height:1.75; color:rgba(33,29,22,0.8); text-wrap:pretty;">The Thăng Long Water Puppet Theatre is founded in Hà Nội, moving the village pond into a permanent city auditorium.</p>
+          </div>
+        </div>
+        <div style="display:grid; grid-template-columns:minmax(96px,130px) 1fr; gap:clamp(18px,3vw,40px); padding:26px 0; border-bottom:1px solid rgba(33,29,22,0.22);">
+          <div style="font-family:'IBM Plex Mono',monospace; font-size:13px; color:#A93B22; padding-top:6px;">1984</div>
+          <div>
+            <h3 style="font-family:'EB Garamond',serif; font-size:27px; font-weight:500; margin:0;">The World Audience</h3>
+            <p style="margin:10px 0 0; font-size:15px; line-height:1.75; color:rgba(33,29,22,0.8); text-wrap:pretty;">First major international tours. Foreign stages are flooded to specification, and múa rối nước becomes Việt Nam's most travelled traditional art.</p>
+          </div>
+        </div>
+        <div style="display:grid; grid-template-columns:minmax(96px,130px) 1fr; gap:clamp(18px,3vw,40px); padding:26px 0; border-bottom:1px solid rgba(33,29,22,0.22);">
+          <div style="font-family:'IBM Plex Mono',monospace; font-size:13px; color:#A93B22; padding-top:6px;">1990s</div>
+          <div>
+            <h3 style="font-family:'EB Garamond',serif; font-size:27px; font-weight:500; margin:0;">Return to the Villages</h3>
+            <p style="margin:10px 0 0; font-size:15px; line-height:1.75; color:rgba(33,29,22,0.8); text-wrap:pretty;">Village troupes such as Đào Thục restore their thủy đình and reopen training. Tourism funds the craft — and changes it.</p>
+          </div>
+        </div>
+        <div style="display:grid; grid-template-columns:minmax(96px,130px) 1fr; gap:clamp(18px,3vw,40px); padding:26px 0;">
+          <div style="font-family:'IBM Plex Mono',monospace; font-size:13px; color:#A93B22; padding-top:6px;">2026</div>
+          <div>
+            <h3 style="font-family:'EB Garamond',serif; font-size:27px; font-weight:500; margin:0;">This Archive</h3>
+            <p style="margin:10px 0 0; font-size:15px; line-height:1.75; color:rgba(33,29,22,0.8); text-wrap:pretty;">Scanning, recording, and transcribing begin. Sixty-four records are opened; most stand ready for the materials the villages will add.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ======================= COLOPHON ======================= -->
+  <footer data-screen-label="Colophon" style="background:#E9E0CB; border-top:3px solid #211D16;">
+    <div style="border-top:1px solid #211D16; margin-top:3px;"></div>
+    <div style="max-width:1280px; margin:0 auto; padding:clamp(56px,7vw,88px) clamp(20px,5vw,56px);">
+      <div style="display:flex; justify-content:space-between; align-items:flex-start; gap:clamp(24px,4vw,56px); flex-wrap:wrap;">
+        <div style="flex:1 1 380px;">
+          <div style="font-family:'EB Garamond',serif; font-size:clamp(30px,3.6vw,44px); line-height:1.25; font-style:italic; text-wrap:balance;">An archive is a promise made to the future.</div>
+          <p style="margin:20px 0 0; font-size:14.5px; line-height:1.75; color:rgba(33,29,22,0.75); max-width:58ch; text-wrap:pretty;">Compiled for CAS3020 · Digital Preservation. Recordings, scans, and plates are content slots awaiting field materials — the catalogue is designed as a living document, so records may be added without redesign.</p>
+        </div>
+        <svg width="96" height="96" viewBox="0 0 96 96" style="flex:0 0 auto; transform:rotate(4deg); opacity:0.9; mix-blend-mode:multiply;">
+          <rect x="4" y="4" width="88" height="88" rx="6" fill="none" stroke="#A93B22" stroke-width="3.5"></rect>
+          <rect x="12" y="12" width="72" height="72" rx="3" fill="none" stroke="#A93B22" stroke-width="1.5"></rect>
+          <text x="48" y="54" text-anchor="middle" font-family="EB Garamond, serif" font-size="16" font-weight="700" letter-spacing="1" fill="#A93B22" style="font-size: 14px">ARCHIVE</text>
+        </svg>
+      </div>
+      <div style="margin-top:44px; border-top:1px solid rgba(33,29,22,0.3); padding-top:18px; display:flex; justify-content:space-between; gap:16px; flex-wrap:wrap;">
+        <span style="font-family:'IBM Plex Mono',monospace; font-size:10px; letter-spacing:0.16em; text-transform:uppercase; color:rgba(33,29,22,0.6);">37 records · 12 object scans · 1 film · 12 oral histories · 12 soundscapes</span>
+        <span style="font-family:'IBM Plex Mono',monospace; font-size:10px; letter-spacing:0.16em; text-transform:uppercase; color:rgba(33,29,22,0.6);">Registry prefix MRN · accession format MRN.CLASS.NNN</span>
+      </div>
+    </div>
+    <div style="background:#211D16; padding:14px clamp(20px,5vw,56px); text-align:center;">
+      <span style="font-family:'IBM Plex Mono',monospace; font-size:10px; letter-spacing:0.2em; text-transform:uppercase; color:rgba(245,240,227,0.65);">MRN — Múa Rối Nước digital preservation archive · compiled Hà Nội 2026 · end of catalogue</span>
+    </div>
+  </footer>
+
+</div>
+
+</x-dc>
+<script type="text/x-dc" data-dc-script>
+class Component extends DCLogic {
+  state = {
+    filter: 'video360',
+    showAll: false,
+    metaOpen: {},
+    featuredState: 'preview',
+    embeds: {},
+    embedDraft: {},
+    railActive: {},
+    railHover: null,
+    stageName: '',
+    transcriptOpen: false,
+    zoomId: null,
+    playing: null,
+    times: { sound: 0, oral: 0 },
+    gain: 1,
+    archiveReady: false,
+  };
+
+  h(key, fn) {
+    this._h = this._h || {};
+    if (!this._h[key]) this._h[key] = fn;
+    return this._h[key];
+  }
+
+  // ---------------- SuperSplat embeds ----------------
+  _normalizeEmbed(raw) {
+    if (!raw) return '';
+    let s = String(raw).trim();
+    if (!s) return '';
+    const m = /src\s*=\s*["']([^"']+)["']/i.exec(s);
+    if (m) s = m[1].trim();
+    if (/^[A-Za-z0-9_-]{5,}$/.test(s) && !/[.\/]/.test(s)) s = 'https://superspl.at/s/' + s;
+    if (!/^https?:\/\//i.test(s)) s = 'https://' + s;
+    return s;
+  }
+
+  _persistEmbeds(embeds) {
+    try { localStorage.setItem('mrn-embeds', JSON.stringify(embeds)); } catch (e) { /* non-fatal */ }
+  }
+
+  _setEmbed(id, raw) {
+    const url = this._normalizeEmbed(raw);
+    this.setState((st) => {
+      const e = Object.assign({}, st.embeds);
+      if (url) e[id] = url; else delete e[id];
+      this._persistEmbeds(e);
+      return { embeds: e };
+    });
+  }
+
+  _setDraft(id, v) {
+    this.setState((st) => {
+      const d = Object.assign({}, st.embedDraft);
+      d[id] = v;
+      return { embedDraft: d };
+    });
+  }
+
+  // ---------------- SoundCloud embeds ----------------
+  _normalizeSoundCloud(raw) {
+    if (!raw) return '';
+    let s = String(raw).trim();
+    if (!s) return '';
+    const m = /src\s*=\s*["']([^"']+)["']/i.exec(s);
+    if (m) s = m[1].trim();
+    if (!/^https?:\/\//i.test(s)) s = 'https://' + s.replace(/^\/+/, '');
+    if (/w\.soundcloud\.com\/player/i.test(s)) return s;
+    const params = '&color=%23a93b22&auto_play=false&hide_related=true&show_comments=false&show_user=true&show_reposts=false&show_teaser=false&visual=false';
+    return 'https://w.soundcloud.com/player/?url=' + encodeURIComponent(s) + params;
+  }
+
+  _setSC(id, raw) {
+    const url = this._normalizeSoundCloud(raw);
+    this.setState((st) => {
+      const e = Object.assign({}, st.embeds);
+      if (url) e[id] = url; else delete e[id];
+      this._persistEmbeds(e);
+      return { embeds: e };
+    });
+  }
+
+  // ---------------- MP4 / 360° video embeds ----------------
+  _normalizeVideo(raw) {
+    if (!raw) return '';
+    let s = String(raw).trim();
+    if (!s) return '';
+    const m = /src\s*=\s*["']([^"']+)["']/i.exec(s);
+    if (m) s = m[1].trim();
+    if (/youtu\.?be/i.test(s)) {
+      const yt = /(?:v=|youtu\.be\/|embed\/)([A-Za-z0-9_-]{6,})/.exec(s);
+      if (yt) return 'https://www.youtube.com/embed/' + yt[1];
+    }
+    if (/^(blob:|data:|\/)/i.test(s)) return s;                   // blob / data / absolute path
+    if (/^https?:\/\//i.test(s)) return s;                        // full URL
+    if (/\.(mp4|webm|ogg|mov|m4v)(\?|#|$)/i.test(s)) return s;    // relative file in project
+    return 'https://' + s;
+  }
+
+  _isDirectVideo(url) {
+    return /\.(mp4|webm|ogg|mov|m4v)(\?|#|$)/i.test(url) || /^(blob:|data:video)/i.test(url);
+  }
+
+  _setVideo(id, raw) {
+    const url = this._normalizeVideo(raw);
+    this.setState((st) => {
+      const e = Object.assign({}, st.embeds);
+      if (url) e[id] = url; else delete e[id];
+      this._persistEmbeds(e);
+      return { embeds: e };
+    });
+  }
+
+  componentDidMount() {
+    try {
+      const saved = JSON.parse(localStorage.getItem('mrn-embeds') || '{}');
+      if (saved && typeof saved === 'object') this.setState({ embeds: saved });
+    } catch (e) { /* non-fatal */ }
+
+    try {
+      const sn = localStorage.getItem('mrn-stage-name');
+      if (sn) this.setState({ stageName: sn });
+    } catch (e) { /* non-fatal */ }
+
+    // A healthy IntersectionObserver always delivers an initial callback for
+    // every observed element (intersecting or not). If no callback arrives
+    // within ~900ms, treat IO as unavailable and fall back to showing all.
+    this._ioSeen = false;
+    let revealEls = [];
+
+    // restrained reveal on section headers
+    try {
+      revealEls = Array.from(document.querySelectorAll('[data-reveal]'));
+      if ('IntersectionObserver' in window) {
+        revealEls.forEach((el) => {
+          el.style.opacity = '0';
+          el.style.transform = 'translateY(14px)';
+          el.style.transition = 'opacity 0.9s cubic-bezier(0.22,1,0.36,1), transform 0.9s cubic-bezier(0.22,1,0.36,1)';
+        });
+        this._revealIO = new IntersectionObserver((entries) => {
+          this._ioSeen = true;
+          entries.forEach((en) => {
+            if (en.isIntersecting) {
+              en.target.style.opacity = '1';
+              en.target.style.transform = 'translateY(0px)';
+              this._revealIO.unobserve(en.target);
+            }
+          });
+        }, { threshold: 0.12 });
+        revealEls.forEach((el) => this._revealIO.observe(el));
+      }
+    } catch (e) { /* non-fatal */ }
+
+    // ledger initializes only as the viewport nears its anchor
+    if (this._archiveAnchor && 'IntersectionObserver' in window) {
+      this._archiveIO = new IntersectionObserver((entries) => {
+        this._ioSeen = true;
+        if (entries.some((en) => en.isIntersecting)) {
+          this._archiveIO.disconnect();
+          this._archiveTimer = setTimeout(() => this.setState({ archiveReady: true }), 650);
+        }
+      }, { rootMargin: '600px' });
+      this._archiveIO.observe(this._archiveAnchor);
+    } else {
+      this.setState({ archiveReady: true });
+    }
+
+    // fallback: IO never called back — reveal everything, load the ledger
+    this._ioFallbackTimer = setTimeout(() => {
+      if (this._ioSeen) return;
+      try {
+        if (this._revealIO) this._revealIO.disconnect();
+        if (this._archiveIO) this._archiveIO.disconnect();
+        revealEls.forEach((el) => {
+          el.style.transition = 'none';
+          el.style.opacity = '1';
+          el.style.transform = 'none';
+        });
+      } catch (e) { /* non-fatal */ }
+      this.setState({ archiveReady: true });
+    }, 900);
+  }
+
+  componentWillUnmount() {
+    if (this._tick) clearInterval(this._tick);
+    if (this._archiveTimer) clearTimeout(this._archiveTimer);
+    if (this._ioFallbackTimer) clearTimeout(this._ioFallbackTimer);
+    if (this._revealIO) this._revealIO.disconnect();
+    if (this._archiveIO) this._archiveIO.disconnect();
+  }
+
+  // ---------------- registry ----------------
+  registry() {
+    if (this._reg) return this._reg;
+    const L = (no, kind, title, vn, attribution, location, year, desc, meaning, provenance, tags, duration) =>
+      ({ no, kind, status: 'live', title, vn, attribution, location, year, desc, meaning, provenance, tags, duration });
+    const reg = [
+      L('MRN.3D.001', 'splat', 'Chú Tễu, the Village Jester', 'Chú Tễu', 'Carver unrecorded · Đào Thục workshop tradition', 'Đào Thục, Đông Anh, Hà Nội', 'c. 1998',
+        'Rod-operated jester figure in fig wood and lacquer. Tễu opens nearly every performance — laughing, scolding, and narrating on behalf of the village.',
+        'Tễu is the voice of the commons: a grinning everyman permitted to mock mandarins and misfortune alike. His topknot tufts mark him as forever a boy of the village.',
+        'Acquired from Đào Thục guild stores; documented on site, 2026.', ['rod puppet', 'lacquer', 'jester'], null),
+      L('MRN.3D.002', 'splat', 'Rồng Vàng, the Golden Dragon', 'Rồng Vàng', 'Workshop of Phan Văn Ngải, Nam Định', 'Thăng Long Theatre, Hà Nội', 'c. 2005',
+        'Articulated dragon in gilt lacquer, built for the paired dragon dance. In performance, twin dragons spray water and trail lit firecrackers across the pond.',
+        'The dragon carries rain to the rice fields. Its appearance over water is a blessing on the harvest and a memory of royal processions.',
+        'Stage copy retired from repertory; transferred to the archive 2026.', ['dragon', 'gilt', 'festival number'], null),
+      L('MRN.3D.003', 'splat', 'Cô Tiên, the Fairy', 'Cô Tiên', 'Carver unrecorded · Nguyên Xá guild', 'Nguyên Xá, Thái Bình', 'mid-20th c.',
+        'Fairy figure for the celestial dance, with jointed arms on submerged strings. Eight fairies descend to bless the village in the closing number.',
+        'The tiên link the watery stage to the heavens — the pond becomes a mirror in which the two worlds touch.',
+        'On loan from the Nguyên Xá guild house.', ['fairy', 'string work', 'closing number'], null),
+      L('MRN.3D.004', 'splat', 'Cá Chép, the Carp', 'Cá Chép', 'Đào Thục workshop tradition', 'Đào Thục, Đông Anh, Hà Nội', 'c. 1980',
+        'Carp puppet from "Cá Chép Hóa Rồng" — the carp that leaps the falls and becomes a dragon. The figure flexes at the tail to breach the water line.',
+        'An emblem of perseverance and scholarship: the studious carp transformed. Families request this number for children sitting examinations.',
+        'Đào Thục guild stores; scanned on site, 2026.', ['carp', 'transformation', 'folk tale'], null),
+      L('MRN.3D.005', 'splat', 'Ông Câu, the Old Fisherman', 'Ông Câu', 'Đào Thục workshop tradition', 'Đào Thục, Đông Anh, Hà Nội', 'c. 1995',
+        'The old fisherman who opens the fishing scene, casting and hauling his net across the pond — a favourite comic figure of the village repertory.',
+        'Ông Câu mirrors the audience back to itself: the daily labour of the delta, played for laughter on the water.',
+        'Đào Thục guild stores; scanned on site, 2026.', ['fisherman', 'comic figure', 'rod puppet'], null),
+      L('MRN.OH.014', 'oral', 'The Pond Was Our Stage', null, 'Nguyễn Thị Thanh, puppeteer · recorded at Nguyên Xá', 'Nguyên Xá, Thái Bình', '2026',
+        'Thanh describes learning at night after field work: the cold of the water, the weight of the rods, and the pride of her first solo Tễu entrance.',
+        'Testimony of the first generation of women formally admitted to a village troupe.',
+        'Recorded for this archive; transcript reviewed by the speaker.', ['testimony', 'women of the troupe'], '26:43'),
+      L('MRN.OH.009', 'oral', 'A Craft Kept Behind the Screen', null, 'Guild elder (name withheld) · Đào Thục', 'Đào Thục, Đông Anh, Hà Nội', '2026',
+        'On the hereditary secrecy of mechanisms: oaths sworn at the communal house, knots taught only to sons, and what changed when the tourists came.',
+        'The secrecy that protected the craft also nearly starved it; the speaker weighs both.',
+        'Recorded 2026; speaker requested anonymity in the public record.', ['guild secrecy', 'oath', 'mechanism'], '18:12'),
+      L('MRN.OH.021', 'oral', 'Forty Years in the Water', null, 'Phan Duy Triển, master carver · Nam Định', 'Nam Định', '2026',
+        'The master carver on choosing sung wood, why a puppet must be light enough to dance and heavy enough to sit in the water, and the faces he gave to Tễu.',
+        "A maker's grammar of the craft, in his own words.",
+        'Recorded at the family workshop, 2026.', ['carving', 'sung wood', 'master artisan'], '31:05'),
+      L('MRN.SND.005', 'sound', 'Dawn at the Village Pond', null, 'Field recording · Đào Thục', 'Đào Thục, Đông Anh, Hà Nội', '2026',
+        'Water birds, distant roosters, and the first wading steps of a troupe setting the stage rig before a festival morning.',
+        'The acoustic ground of the art: every performance begins with this silence.',
+        'Recorded 2026; hydrophone and stereo pair.', ['ambience', 'field recording'], '06:14'),
+      L('MRN.SND.002', 'sound', 'Chèo Orchestra, Tuning', null, 'Thăng Long Theatre pit musicians', 'Hà Nội', '2026',
+        'Đàn bầu monochord, trống cơm drum, wooden mõ, and sáo flute finding pitch before curtain — the sound that tells a village the puppets are coming.',
+        'Chèo music carries the drama; the puppets move to its breath.',
+        'Recorded with permission of the ensemble, 2026.', ['chèo', 'đàn bầu', 'orchestra'], '04:51'),
+      L('MRN.SND.011', 'sound', 'Festival Audience, Hồ Tây', null, 'Field recording · West Lake, Hà Nội', 'Hồ Tây, Hà Nội', '2026',
+        "Children counting dragon heads, laughter at Tễu's first joke, firecrackers, and applause rolling back off the water.",
+        'The audience is half the performance; this record preserves them too.',
+        'Recorded 2026.', ['audience', 'festival'], '07:22'),
+      L('MRN.360.001', 'video360', 'A Day at the Pond — 360° Vlog', null, 'Handheld 360° camera · field visit', 'Đào Thục, Đông Anh, Hà Nội', '2026',
+        'One loose, casual 360° reel from a working day in the village — b-roll of the carving shed, the pond and thủy đình, kẹo lạc and tea on the table, and the troupe drifting in and out between takes.',
+        'Not a polished film but a visit: the everyday texture around the art, caught in a single handheld walkaround.',
+        'Filmed on one field visit, 2026.', ['vlog', 'b-roll', 'field visit'], '14:20'),
+    ];
+    const locations = ['Đào Thục, Đông Anh', 'Nguyên Xá, Thái Bình', 'Chùa Thầy, Quốc Oai', 'Hồ Tây, Hà Nội', 'Nam Định'];
+    const slotDefs = [
+      ['splat', 'MRN.3D', 6, ['Chăn Trâu, Buffalo and Boy', 'Cáo Bắt Vịt, the Fox and the Duck', 'Vinh Quy Bái Tổ, the Laureate Returns', 'Múa Phượng, the Phoenix Pair', 'Múa Lân, the Unicorn Dance', 'Bà Chúa Thượng Ngàn, Lady of the Forest', 'Thạch Sanh, the Woodcutter'],
+        'Reserved object record. A Gaussian-splat slot with accession number, viewer chrome, and provenance fields in place — embed a SuperSplat link to publish.', 'object scan'],
+      ['oral', 'MRN.OH', 22, ['Musician of the Chèo Ensemble', 'The Costume and Curtain Keeper', 'Festival Organizer, Đào Thục', 'The Youngest Apprentice, Age 16', 'A Retired Rod-Maker', 'Audience Memories, Three Generations', 'The Flood Year, 1971', 'Women of the Troupe', 'Teaching the Secret Knots'],
+        'Reserved interview slot. Transcript pane, citation views, and floating audio controls are prepared for the recording.', 'interview'],
+      ['sound', 'MRN.SND', 12, ['Rain on the Pond Surface', 'Trống Cơm Drum Patterns', 'Sáo Flute, Solo Passage', 'Đàn Bầu, Monochord Study', 'Firecrackers at the Dragon Entrance', 'Wading Steps Behind the Screen', 'Village Market, Morning', 'Frogs after the Performance', 'Applause and Laughter, Children'],
+        'Reserved soundscape slot. Waveform layout and gain controls are prepared for the field recording.', 'field audio'],
+    ];
+    let li = 0;
+    slotDefs.forEach(([kind, series, start, subjects, desc, tag]) => {
+      subjects.forEach((subject, i) => {
+        const num = String(start + i).padStart(3, '0');
+        reg.push({
+          no: series + '.' + num, kind, status: 'slot', title: subject, vn: null,
+          attribution: 'Awaiting field collection', location: locations[li++ % locations.length], year: '—',
+          desc, meaning: 'Cultural significance will be documented with the injected media.',
+          provenance: 'Slot reserved in the registry; accession number assigned.', tags: ['reserved', tag], duration: null,
+        });
+      });
+    });
+    this._reg = reg;
+    return reg;
+  }
+
+  // ---------------- playback simulation ----------------
+  _fmt(t) {
+    const m = Math.floor(t / 60), s2 = Math.floor(t % 60);
+    return m + ':' + String(s2).padStart(2, '0');
+  }
+
+  _togglePlay(ch) {
+    this.setState((st) => ({ playing: st.playing === ch ? null : ch }), () => this._syncTick());
+  }
+
+  _syncTick() {
+    if (this.state.playing && !this._tick) {
+      this._tick = setInterval(() => {
+        this.setState((st) => {
+          if (!st.playing) return null;
+          const ch = st.playing, dur = ch === 'sound' ? 291 : 1603;
+          let t = st.times[ch] + 0.25, playing = st.playing;
+          if (t >= dur) { t = 0; playing = null; }
+          const times = Object.assign({}, st.times);
+          times[ch] = t;
+          return { times, playing };
+        }, () => { if (!this.state.playing) this._syncTick(); });
+      }, 250);
+    } else if (!this.state.playing && this._tick) {
+      clearInterval(this._tick);
+      this._tick = null;
+    }
+  }
+
+  // ---------------- render values ----------------
+  renderVals() {
+    const s = this.state;
+    const reg = this.registry();
+    const MONO = "'IBM Plex Mono', monospace";
+    const kindLabels = { splat: '3D object', video360: '360° film', oral: 'Oral history', sound: 'Soundscape', photo: 'Archival plate' };
+
+    // tabs
+    const tabDefs = [['video360', '360° film'], ['splat', '3D objects'], ['oral', 'Oral histories'], ['sound', 'Soundscapes']];
+    const tabs = tabDefs.map(([id, label]) => {
+      const count = id === 'all' ? reg.length : reg.filter((a) => a.kind === id).length;
+      const active = s.filter === id;
+      return {
+        id,
+        text: label + ' · ' + count,
+        onClick: this.h('tab-' + id, () => this.setState({ filter: id, showAll: false })),
+        style: {
+          fontFamily: MONO, fontSize: '10px', letterSpacing: '0.14em', textTransform: 'uppercase',
+          padding: '10px 15px', cursor: 'pointer',
+          background: active ? '#211D16' : 'transparent',
+          color: active ? '#F5F0E3' : 'rgba(33,29,22,0.7)',
+          border: active ? '1px solid #211D16' : '1px solid rgba(33,29,22,0.35)',
+        },
+      };
+    });
+
+    const filtered = s.filter === 'all' ? reg : reg.filter((a) => a.kind === s.filter);
+    const shown = s.showAll ? filtered : filtered.slice(0, 18);
+    const stripeBg = 'repeating-linear-gradient(45deg, rgba(33,29,22,0.055) 0px, rgba(33,29,22,0.055) 7px, rgba(0,0,0,0) 7px, rgba(0,0,0,0) 14px), #EDE6D2';
+
+    const cards = shown.map((a) => {
+      const slot = a.status === 'slot';
+      const open = !!s.metaOpen[a.no];
+      const hasPlate = a.kind === 'photo' || a.kind === 'splat';
+      const isFilm = a.kind === 'video360';
+      const fid = 'film-' + a.no;
+      const furl = s.embeds[fid] || '';
+      const commitFilm = () => this._setVideo(fid, this.state.embedDraft[fid] || '');
+      return {
+        key: a.no, no: a.no, kindLabel: kindLabels[a.kind], title: a.title,
+        attribution: a.attribution, locYear: a.location + ' · ' + a.year,
+        desc: a.desc, provenance: a.provenance, meaning: a.meaning,
+        tags: a.tags, duration: a.duration || '', hasDuration: !!a.duration,
+        isOral: a.kind === 'oral', isSound: a.kind === 'sound', hasPlate,
+        isFilm,
+        filmUrl: furl, hasFilm: !!furl, noFilm: !furl,
+        filmBoxStyle: {
+          position: 'relative', height: a.no === 'MRN.360.001' ? 'clamp(360px,46vw,560px)' : '200px',
+          background: '#14110D', overflow: 'hidden', borderBottom: '1px solid rgba(33,29,22,0.22)',
+        },
+        isDirectVideo: this._isDirectVideo(furl), isEmbedVideo: !!furl && !this._isDirectVideo(furl),
+        filmDraft: s.embedDraft[fid] || '',
+        onFilmDraft: this.h('fmdraft-' + a.no, (e) => this._setDraft(fid, e.target.value)),
+        onFilmKey: this.h('fmkey-' + a.no, (e) => { if (e.key === 'Enter') commitFilm(); }),
+        onFilmEmbed: this.h('fmemb-' + a.no, commitFilm),
+        onFilmRelease: this.h('fmrel-' + a.no, () => this._setVideo(fid, '')),
+        filmNote: furl ? ('Embedded · ' + furl) : 'No film yet — paste an MP4 link or a 360° video URL',
+        plateStyle: {
+          height: a.kind === 'photo' ? '190px' : '150px',
+          background: stripeBg,
+          borderBottom: '1px solid rgba(33,29,22,0.22)',
+          display: 'flex', alignItems: 'center', justifyContent: 'center',
+          padding: '0 24px', boxSizing: 'border-box',
+        },
+        plateCaption: slot ? 'Content slot — inject ' + kindLabels[a.kind].toLowerCase() : 'Plate — ' + a.title + ' · awaiting media',
+        cardStyle: slot
+          ? { border: '1px dashed rgba(33,29,22,0.4)', background: 'transparent' }
+          : Object.assign(
+              { border: '1px solid rgba(33,29,22,0.32)', background: '#F9F5EA' },
+              a.no === 'MRN.360.001' ? { gridColumn: '1 / -1' } : {}
+            ),
+        slotMark: slot ? 'Reserved' : 'In collection',
+        slotMarkStyle: {
+          fontFamily: MONO, fontSize: '9px', letterSpacing: '0.18em', textTransform: 'uppercase',
+          color: slot ? 'rgba(33,29,22,0.45)' : '#7A6F4E',
+        },
+        metaOpen: open,
+        onToggleMeta: this.h('meta-' + a.no, () => this.setState((st) => {
+          const mo = Object.assign({}, st.metaOpen);
+          mo[a.no] = !mo[a.no];
+          return { metaOpen: mo };
+        })),
+        metaLabel: open ? '− Close record notes' : '+ Provenance & cultural meaning',
+      };
+    });
+
+    // 3D rail
+    const railSplats = reg.filter((a) => a.kind === 'splat' && a.status === 'live');
+    const rail = railSplats.map((a, i) => {
+      const active = !!s.railActive[a.no];
+      const vid = 'rail-' + i;
+      const eurl = s.embeds[vid] || '';
+      const commitRail = () => {
+        this._setEmbed(vid, this.state.embedDraft[vid] || '');
+        this.setState((st) => { const ra = Object.assign({}, st.railActive); ra[a.no] = true; return { railActive: ra }; });
+      };
+      return {
+        key: a.no, no: a.no,
+        title: '', meaning: '', hasContent: false, noContent: true,
+        active, inactive: !active,
+        embedUrl: eurl, hasEmbed: !!eurl, noEmbed: !eurl,
+        embedDraft: s.embedDraft[vid] || '',
+        plateStyle: {
+          position: 'relative', height: '280px', background: '#14110D', overflow: 'hidden',
+        },
+        onDraft: this.h('rdraft-' + i, (e) => this._setDraft(vid, e.target.value)),
+        onKey: this.h('rkey-' + i, (e) => { if (e.key === 'Enter') commitRail(); }),
+        onEmbed: this.h('remb-' + i, commitRail),
+        onHover: this.h('rhover-' + i, () => this.setState({ railHover: a.no })),
+        onUnhover: this.h('runhover-' + i, () => this.setState((st) => ({ railHover: st.railHover === a.no ? null : st.railHover }))),
+        embedNote: eurl ? ('Embedded · ' + eurl) : 'No SuperSplat link yet — paste a share link to embed',
+        onToggle: this.h('rail-' + a.no, () => this.setState((st) => {
+          const ra = Object.assign({}, st.railActive);
+          ra[a.no] = !ra[a.no];
+          return { railActive: ra };
+        })),
+        toggleLabel: active ? 'Release viewer' : 'Open 3D record',
+      };
+    });
+
+    // soundscapes gallery — 8 swipeable listening plates with SoundCloud slots
+    const soundscapeDefs = [
+      { no: 'MRN.SND.001', title: 'Finding a Seat', instruments: 'Before the show', location: 'Thăng Long Theatre, Hà Nội', year: '2026', duration: '03:10', desc: 'The crowd settles at the water\u2019s edge — fans, chatter, and a still pond.' },
+      { no: 'MRN.SND.002', title: 'The Lights Go Down', instruments: 'The hush', location: 'Thăng Long Theatre, Hà Nội', year: '2026', duration: '01:24', desc: 'Voices drop to a whisper; the pond goes dark and waits.' },
+      { no: 'MRN.SND.003', title: 'The Orchestra Begins', instruments: 'Chèo ensemble', location: 'Thăng Long Theatre, Hà Nội', year: '2026', duration: '04:02', desc: 'Đàn bầu and drums swell — the puppets are coming.' },
+      { no: 'MRN.SND.004', title: 'Tễu Steps Out', instruments: 'First laughter', location: 'Thăng Long Theatre, Hà Nội', year: '2026', duration: '02:48', desc: 'The jester cracks his first joke and the audience answers.' },
+      { no: 'MRN.SND.005', title: 'Dragons on the Water', instruments: 'Firecrackers & spray', location: 'Thăng Long Theatre, Hà Nội', year: '2026', duration: '02:55', desc: 'Smoke, sparks, and a gasp as the dragons breach and spit rain.' },
+      { no: 'MRN.SND.006', title: 'The Fairy Dance', instruments: 'The quiet number', location: 'Thăng Long Theatre, Hà Nội', year: '2026', duration: '04:20', desc: 'The crowd falls silent as the fairies cross the mirrored water.' },
+      { no: 'MRN.SND.007', title: 'The Final Bow', instruments: 'Applause', location: 'Thăng Long Theatre, Hà Nội', year: '2026', duration: '03:30', desc: 'Clapping rolls back off the pond; children call for more.' },
+      { no: 'MRN.SND.008', title: 'Out into the Night', instruments: 'After the show', location: 'Thăng Long Theatre, Hà Nội', year: '2026', duration: '02:12', desc: 'The lamps go out, the crowd drifts home, the frogs return.' },
+    ];
+    const soundscapes = soundscapeDefs.map((d, i) => {
+      const id = 'snd' + (i + 1);
+      const url = s.embeds[id] || '';
+      const commit = () => this._setSC(id, this.state.embedDraft[id] || '');
+      return Object.assign({}, d, {
+        key: id, locYear: d.location + ' · ' + d.year,
+        scUrl: url, hasSC: !!url, noSC: !url,
+        embedDraft: s.embedDraft[id] || '',
+        onDraft: this.h('snddraft-' + id, (e) => this._setDraft(id, e.target.value)),
+        onKey: this.h('sndkey-' + id, (e) => { if (e.key === 'Enter') commit(); }),
+        onEmbed: this.h('sndemb-' + id, commit),
+        embedNote: url ? 'Embedded · SoundCloud player' : 'No SoundCloud link yet — paste a track link to embed',
+      });
+    });
+    const sndByKey = {};
+    soundscapes.forEach((o, i) => { sndByKey['snd' + (i + 1)] = o; });
+
+    // interviews (oral histories) — SoundCloud embed slots
+    const interviewDefs = [
+      {
+        no: 'MRN.OH.014', label: 'Interview · audio',
+        title: 'The Craft Passed Hand to Hand',
+        speaker: '[ Speaker name pending ] · puppet carver & guild teacher · Đào Thục · recorded 2026',
+        speakerShort: '[ name pending ]',
+        excerptVn: 'Từ một cục gỗ thù lù, anh phác thảo lên giấy rồi bắt đầu đục. Đục đẽo làm sao cho khi người ta nhìn vào nhân vật là hiểu ngay cả nội dung. Đục xong thì mang đi sơn, rồi lắp máy móc vào để điều khiển được ở trong nước.',
+        excerptEn: 'From a rough block of wood, I sketch it on paper and begin to carve — carved so that the moment you look at the figure, you grasp the whole story. Then it is lacquered, and the mechanism is fitted so it can be worked beneath the water.',
+        lineVn: 'Trong quá trình lao động, người ta sáng tạo — cái đấy nhiều khi trường lớp không dạy được.',
+        lineEn: 'In the work itself, people create — and that is something schools often cannot teach.',
+      },
+      {
+        no: 'MRN.OH.021', label: 'Interview · audio',
+        title: 'To Save One Art Is to Save Many',
+        speaker: '[ Speaker name pending ] · puppeteer & troupe leader · phường Hồng Quang · recorded 2026',
+        speakerShort: '[ name pending ]',
+        excerptVn: 'Người làm con rối mà lại đi múa rối thì phải sáng tạo không ngừng, luôn luôn phải học tập cả đời, chẳng bao giờ hết. Ngay cả việc tạo hình, rồi múa, rồi thoại — trong rối nước họ còn phải thoại bằng mồm, nói như một diễn viên đóng phim.',
+        excerptEn: 'Whoever carves the puppets and then performs them must create without end — you study your whole life and never finish. Even the shaping, the movement, the voicing: in water puppetry you still speak the lines yourself, like a film actor.',
+        lineVn: 'Bảo tồn nghề múa rối nước này là bảo tồn rất nhiều nghề.',
+        lineEn: 'To preserve water puppetry is to preserve many crafts at once.',
+      },
+    ];
+    const interviews = interviewDefs.map((d, i) => {
+      const id = 'iv' + (i + 1);
+      const url = s.embeds[id] || '';
+      const commit = () => this._setSC(id, this.state.embedDraft[id] || '');
+      return Object.assign({}, d, {
+        key: id,
+        scUrl: url, hasSC: !!url, noSC: !url,
+        embedDraft: s.embedDraft[id] || '',
+        onDraft: this.h('ivdraft-' + id, (e) => this._setDraft(id, e.target.value)),
+        onKey: this.h('ivkey-' + id, (e) => { if (e.key === 'Enter') commit(); }),
+        onEmbed: this.h('ivemb-' + id, commit),
+        embedNote: url ? 'Embedded · SoundCloud player' : 'No SoundCloud link yet — paste a track or playlist link to embed',
+      });
+    });
+
+    // The single 360° film — now the whole of Section V
+    const f360 = reg.find((a) => a.kind === 'video360') || {};
+    const f360id = 'film-' + (f360.no || 'MRN.360.001');
+    const f360url = s.embeds[f360id] || 'https://www.youtube.com/embed/35qFUgty71o';
+    const commit360 = () => this._setVideo(f360id, this.state.embedDraft[f360id] || '');
+    const film360 = {
+      no: f360.no || 'MRN.360.001', title: f360.title || '', duration: f360.duration || '',
+      attribution: f360.attribution || '', locYear: (f360.location || '') + ' · ' + (f360.year || ''),
+      desc: f360.desc || '', meaning: f360.meaning || '',
+      filmUrl: f360url, hasFilm: !!f360url, noFilm: !f360url,
+      isDirectVideo: this._isDirectVideo(f360url), isEmbedVideo: !!f360url && !this._isDirectVideo(f360url),
+      filmDraft: s.embedDraft[f360id] || '',
+      onFilmDraft: this.h('f360draft', (e) => this._setDraft(f360id, e.target.value)),
+      onFilmKey: this.h('f360key', (e) => { if (e.key === 'Enter') commit360(); }),
+      onFilmEmbed: this.h('f360emb', commit360),
+      onFilmRelease: this.h('f360rel', () => this._setVideo(f360id, '')),
+      filmNote: f360url ? ('Embedded · ' + f360url) : 'No film yet — paste an MP4 link or a 360° video URL',
+    };
+
+    // Nam Định behind-the-scenes filmstrip — 30 drag-to-fill frames
+    const gallery = Array.from({ length: 30 }, (_, i) => {
+      const n = i + 1;
+      const num = String(n).padStart(2, '0');
+      const mark = String(n) + (i % 4 === 2 ? 'A' : '');
+      return { key: 'nd' + num, slotId: 'nd-' + num, num, mark, placeholder: '› ' + num };
+    });
+
+    return {
+      // featured viewer
+      showPreview: s.featuredState === 'preview',
+      showActive: s.featuredState === 'active',
+      onActivate: this.h('activate', () => this.setState({ featuredState: 'active' })),
+      onRelease: this.h('release', () => this.setState({ featuredState: 'preview' })),
+      featuredEmbedUrl: s.embeds.featured || '',
+      hasFeaturedEmbed: !!s.embeds.featured,
+      noFeaturedEmbed: !s.embeds.featured,
+      featuredEmbedDraft: s.embedDraft.featured || '',
+      onFeaturedDraft: this.h('fdraft', (e) => this._setDraft('featured', e.target.value)),
+      onFeaturedKey: this.h('fkey', (e) => { if (e.key === 'Enter') { this._setEmbed('featured', this.state.embedDraft.featured || ''); this.setState({ featuredState: 'active' }); } }),
+      onEmbedFeatured: this.h('femb', () => { this._setEmbed('featured', this.state.embedDraft.featured || ''); this.setState({ featuredState: 'active' }); }),
+      embedStatus: s.embeds.featured ? ('Embedded · ' + s.embeds.featured) : 'No SuperSplat link yet — paste a share link below to embed',
+      viewerPlateStyle: {
+        position: 'relative', aspectRatio: '4 / 3', background: '#14110D', overflow: 'hidden',
+        border: '1px solid rgba(33,29,22,0.4)',
+        boxShadow: 'inset 0 0 0 1px rgba(245,240,227,0.1)',
+      },
+
+      // rail
+      rail,
+      railDimStyle: {
+        position: 'fixed', inset: 0, background: 'rgba(20,17,13,0.55)',
+        pointerEvents: 'none', opacity: s.railHover ? 1 : 0,
+        transition: 'opacity 0.35s ease', zIndex: 40,
+      },
+      // standalone stage scan
+      stageScanUrl: s.embeds.stagescan || '',
+      hasStageScan: !!s.embeds.stagescan,
+      noStageScan: !s.embeds.stagescan,
+      stageScanDraft: s.embedDraft.stagescan || '',
+      stageName: s.stageName,
+      stageNameDisplay: s.stageName || 'Untitled stage scan',
+      onStageName: this.h('stagename', (e) => {
+        const v = e.target.value;
+        try { localStorage.setItem('mrn-stage-name', v); } catch (er) { /* non-fatal */ }
+        this.setState({ stageName: v });
+      }),
+      onStageDraft: this.h('stagedraft', (e) => this._setDraft('stagescan', e.target.value)),
+      onStageKey: this.h('stagekey', (e) => { if (e.key === 'Enter') this._setEmbed('stagescan', this.state.embedDraft.stagescan || ''); }),
+      onStageEmbed: this.h('stageemb', () => this._setEmbed('stagescan', this.state.embedDraft.stagescan || '')),
+      stageScanNote: s.embeds.stagescan ? ('Embedded · ' + s.embeds.stagescan) : 'No SuperSplat link yet — paste a share link to embed the stage',
+
+      railRef: this.h('railEl', (el) => { this._railEl = el; }),
+      onRailPrev: this.h('railprev', () => { if (this._railEl) this._railEl.scrollBy({ left: -470, behavior: 'smooth' }); }),
+      onRailNext: this.h('railnext', () => { if (this._railEl) this._railEl.scrollBy({ left: 470, behavior: 'smooth' }); }),
+
+      // ledger
+      archiveAnchorRef: this.h('archAnchor', (el) => { this._archiveAnchor = el; }),
+      archiveReady: s.archiveReady,
+      archivePending: !s.archiveReady,
+      skels: [{ key: 0 }, { key: 1 }, { key: 2 }, { key: 3 }, { key: 4 }, { key: 5 }, { key: 6 }, { key: 7 }, { key: 8 }],
+      tabs,
+      cards,
+      showingLabel: 'Showing ' + shown.length + ' of ' + filtered.length + ' records',
+      showToggle: filtered.length > 18,
+      toggleAllLabel: s.showAll ? 'Collapse the ledger' : 'Open the full ledger — ' + filtered.length + ' records',
+      onToggleAll: this.h('toggleAll', () => this.setState((st) => ({ showAll: !st.showAll }))),
+
+      // interviews (oral histories)
+      interviews,
+
+      // soundscapes gallery
+      soundscapes,
+      ...sndByKey,
+      sndRailRef: this.h('sndEl', (el) => { this._sndEl = el; }),
+      onSndPrev: this.h('sndprev', () => { if (this._sndEl) this._sndEl.scrollBy({ left: -384, behavior: 'smooth' }); }),
+      onSndNext: this.h('sndnext', () => { if (this._sndEl) this._sndEl.scrollBy({ left: 384, behavior: 'smooth' }); }),
+
+      // 360° film (Section V)
+      film360,
+
+      // Nam Định filmstrip
+      gallery,
+      galRef: this.h('galEl', (el) => { this._galEl = el; }),
+      onGalPrev: this.h('galprev', () => { if (this._galEl) this._galEl.scrollBy({ left: -(this._galEl.clientWidth * 0.8), behavior: 'smooth' }); }),
+      onGalNext: this.h('galnext', () => { if (this._galEl) this._galEl.scrollBy({ left: this._galEl.clientWidth * 0.8, behavior: 'smooth' }); }),
+    };
+  }
+}
+
+</script>
+</body>
+</html>
